@@ -19,7 +19,7 @@ class UsuarioCollection {
         //criando uma collection usando o schema definido
         mongoose.model('usuarios',UsuarioSchema);
         console.log('Usuarios Schema criado com Sucesso');
-        }
+    }
 }
 
 module.exports = new UsuarioCollection;

@@ -29,7 +29,7 @@ class UsuarioDao{
     listar(res){
         const Usuario = mongoose.model('usuarios'); 
         //mostrando todos os usuarios
-        Usuario.find()
+        Usuario.find().sort({nome:1})
         .then((usuarios)=>{
             //passando status e um json com a resposta
             res.status(202).json(usuarios);
