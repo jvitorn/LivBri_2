@@ -18,23 +18,68 @@ class UsuarioDao{
             email:usuarioEmail  
         }).save();
 
-        inserir.then(()=>{
+        inserir.then((results)=>{
             console.log("Cadastro de Novo Usuario efetuado");
-            res.status(201).json({msg:"Cadastro de Novo Usuario efetuado",id:inserir._id});
+            res.status(201).json({msg:"Cadastro de Novo Usuario efetuado",id:results._id});
         })
         .catch((error)=>{
-            console.log("Erro ao cadastrar um novo usuario ao banco de dados:"+error)
+            res.status(404).json({msg:"Erro ao cadastrar um novo usuario ao banco de dados",error})
         })
     }
     listar(res){
         const Usuario = mongoose.model('usuarios'); 
+        //mostrando todos os usuarios
         Usuario.find()
         .then((usuarios)=>{
-            console.log(usuarios)
-            res.json(usuarios);
+            //passando status e um json com a resposta
+            res.status(202).json(usuarios);
         })
         .catch((error)=>{
-            console.log(error)
+            res.status(404).json({msg:"Erro ao listar usuarios ao banco de dados",error})
+        })
+    }
+    logarUsuario(usuario,res){
+        //Collection de Usuarios
+        const Usuario = mongoose.model('usuarios');
+        //Função de procurar Id e enviar os dados daquele Usuario
+        const id  = usuario.id;
+
+        Usuario.findOne( { _id:id } )
+        .then((results)=>{
+            res.status(202).json({nome:results.nome});
+        })
+        .catch((error)=>{
+            res.status(400).json({msg:"Erro ao logar usuario ao banco de dados",error});
+        })
+
+    }
+    atualizar(id,valores,res){
+        //Collection de Usuarios
+        const Usuario = mongoose.model('usuarios');
+        //atualizar informações
+        Usuario.updateOne({_id:id},{
+            nome:valores.nome,
+            email:valores.email
+        })
+        .then((results)=>{
+            res.status(201).json({msg:"Dados Atualizados Com Sucesso",results});
+        })
+        .catch((error)=>{
+            res.status(400).json({msg:"Erro ao atualizar usuario ao banco de dados",error});
+        })
+        //Função de 
+    }
+    deletarUsuario(id,res){
+        //Collection de Usuarios
+        const Usuario = mongoose.model('usuarios');
+        //Função de remover usuario passando como parametro o ID dele 
+        Usuario.deleteOne({ _id:id })
+        .then((usuario)=>{
+            //passando status e um json com a resposta
+            res.status(204).json({msg:"Usuario Removido do Banco de Dados"});
+        })
+        .catch((error)=>{
+            res.status(400).json({msg:"Erro ao deletar o  usuario ao banco de dados",error});
         })
     }
 }
