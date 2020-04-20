@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const UsuarioCollection = require('../infra/usuarioCollection');
+
 //model
 // const Usuario = new UsuarioCollection;
 

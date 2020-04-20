@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
-const LivroCollection = require('../infra/livroCollection');
+
 
 class LivroDao{
     criar(livro,res){
         const { titulo,autor,categoria,imagem,descricao,preco} = livro;
         const Livro = mongoose.model('livros');
-
         const inserir = new Livro({
             titulo:titulo,
             autor:autor,
@@ -26,19 +25,57 @@ class LivroDao{
     listar(res){
         const Livro = mongoose.model('livros');
         //mostrando todos os livros
-        Livro.find().sort({titulo:1})
+        Livro.find({status:true}).sort({titulo:1})
         .then((results)=>{
-            res.json(202).json(results);
+            res.status(202).json(results);
         })
         .catch((error)=>{
-            res.json(400).json(error);
+            res.status(400).json(error);
         })
     }
+    listarCategorias(res){
+        const Livro = mongoose.model('livros');
+        const categorias = [{categoria:"Fantasia"},{categoria:"Ficção"},{categoria:"Romance"},{categoria:"Poesia"},{categoria:"Biografia"},{categoria:"Humor"},{categoria:"Contos"},{categoria:"Saúde"},{categoria:"Música"},{categoria:"Fotografia"},{categoria:"Artes"}];
+        
+        res.status(200).json(categorias);
+        /**
+        db.livros.find({categoria:{$exists:true}}).map(function(u){
+            var livroCategoria  = u.categoria;
+            return livroCategoria;
+        })
+         */  
+    }
     listarPorCategoria(categoria,res){
-
+        const Livro = mongoose.model('livros');
+        Livro.find( {"categoria":categoria,"status":true }).sort({categoria:1})
+        .then((results)=>{
+            res.status(202).json(results);
+        })
+        .catch((error)=>{
+            res.status(400).json(error);
+        })
     }
     inativar(id,res){
-
+        const Livro = mongoose.model('livros');
+        const update = { status: false }
+        Livro.updateOne({_id:id},update)
+        .then((results)=>{
+            res.status(201).json(results);
+        })
+        .catch((error)=>{
+            res.status(400).json(error);
+        })
+    }
+    ativar(id,res){
+        const Livro = mongoose.model('livros');
+        const update = { status : true }
+        Livro.updateOne({_id:id},update)
+        .then((results)=>{
+            res.status(201).json({msg:"Livro Ativado com sucesso",results});
+        })
+        .catch((error)=>{
+            res.status(400).json(error);
+        })
     }
     
 }
