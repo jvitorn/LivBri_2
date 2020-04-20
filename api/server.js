@@ -8,8 +8,8 @@ const collections = require('./infra/collections');
 connection.then(()=>{
     const app = customExpress();
     //iniciando servidor
-    app.listen(3000,()=>{
-        console.log('Servidor Iniciado e Rodando no link http://localhost:3000');
+    app.listen(3333,()=>{
+        console.log('Servidor Iniciado e Rodando no link http://localhost:3333');
     });
     console.log("MongoDB connectado...");       
     collections.init(connection,mongoose);

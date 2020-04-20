@@ -1,4 +1,5 @@
 const Livro = require("../models/livro");
+const path = require('path');
 const routes = {
     list:'/livros',
     listCategory:'/livros/categoria/:category',
@@ -40,6 +41,9 @@ module.exports = (app)=>{
             const { id } = req.body;
             Livro.ativar(id,res);
         })
-        
+     // habilitando HTML5MODE
+    app.all('/*', function(req, res) {
+        res.sendFile(path.resolve('public/index.html'));
+    });
 
 }

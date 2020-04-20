@@ -1,20 +1,21 @@
 // require
 const express = require('express');
-const consign = require('consign');
 const bodyParser = require('body-parser');
+const path    = require('path');
 
 module.exports = ()=>{
     // criando um app em express
     const app = express();
     //use midwares
+    //definindo os arquivos da aplicação
+    app.use(express.static(path.join(__dirname,'./public')));
     app.use(bodyParser.urlencoded({extended:true}));
     app.use(bodyParser.json());
-    //consign esta incluindo tudo que esta na pasta 'controllers' para dentro do app
-    consign()
-        .include('controllers')
-        .into(app)
-     
 
+    // habilitando HTML5MODE
+     app.all('/*', function(req, res) {
+        res.sendFile(path.resolve('public/index.html'));
+    });
     return app;
     
 }
