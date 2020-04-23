@@ -1,0 +1,28 @@
+ .card{
+        max-height: 450px;
+        height:420px;
+        overflow: hidden;
+        margin-bottom: 2.5rem;
+        
+    }
+    .card-icons{
+        max-height: 450px;
+        height:130px;
+        overflow: hidden;
+       padding: 0.5rem;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+    .card-icons .fas{
+        font-size: 47px;
+    }
+    .card-icons:hover{
+        color:#17a2b8;
+        border-radius: 30px;
+        border: solid 1px #17a2b8   ;
+    }
+    .card-icons p{
+        margin-top:2px;
+        font-weight: bolder;
+    }

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- bootstrap script -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="css/adm.css">
+    <link rel="stylesheet" href="css/inatiaLivros.css">
+     <!-- Font Awesome -->
+     <script src="https://kit.fontawesome.com/3732f07a5a.js" crossorigin="anonymous"></script>
+     <style>
+         .table-inativar{
+            box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 white;  
+         }
+         td.crud-livro-descrip{
+            width: 150px;	
+            white-space: pre;
+         }
+     </style>
+</head>
+<body class="noturno">
+    <div class="container">
+        <section class="row crud-header">
+            <div class="col-12 mt-4">
+                <section class="row menu">
+                    <!-- icons -->
+                    <div class="col-md-6 mb-5">
+                        <div class="row">
+                           <div class="col-md-3 icon-menu-itens-crud">
+                            <a href="adicionaLivros.html" class="text-warning stretched-link">
+                                <i class="fas fa-plus text-success"></i>
+                                <br>
+                                Adicionar Livro
+                            </a>
+                            </div>
+                            <div class="col-md-3 icon-menu-itens-crud">
+                                <a href="adicionaLivros.html" class="text-warning stretched-link">
+                                    <i class="fas fa-ban text-info"></i>
+                                    <br>Inativar Livro
+                                </a>
+                            </div>
+                        
+                            <div class="col-md-3 icon-menu-itens-crud">
+                                <a href="adicionaLivros.html" class="text-warning stretched-link">
+                                    <i class="fas fa-book-medical text-danger"></i><br>
+                                    Reativar Livro
+                                </a>
+                            </div>
+                            <div class="col-md-3 icon-menu-itens-crud">
+                                <a href="index.html" class="text-warning stretched-link">
+                                    <i class="fas fa-door-open text-primary"></i><br>
+                                    Voltar P/ Home
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-5 mt-1">
+                        <div class="form-group">
+                            <input type="text" class="form-control pesquisa" placeholder="Pesquisa">
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-right">
+                        <div class="text-group">
+                            <h4>Bem Vindo João</h4>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-2"></div>
+        </section>
+        <section class="row crud-info">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="text-group">
+                        <h6 class="h6">CRUD Livros | <i class="fas fa-home text-info"></i> > <small> Inativar Livros </small></h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row crud-btn-send">
+            <div class="col-md-6">
+                <div class="form-group mt-3">
+                    <button class="btn btn-success" data-toggle="modal" data-target="#adicionaModal">Adicionar Livro</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#inativarModal">Inativar Livro</button>
+                    <a class="btn btn-danger" href="painel.html">Voltar p/ Painel</a>
+                    <a class="btn btn-light" href="index.html">Voltar p/ Site</a>
+                </div>
+            </div>
+        </section>
+        <section class="row crud-table-book">
+            <div class="col-md-12 ">
+                <div class="row">
+                    <table class="table table-light  table-striped table-hover shadow">
+                        <thead class="">
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td><span class="badge badge-primary">true</span></td>
+                            <td>
+                                <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
+                                &nbsp;&nbsp;
+                                <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
+                                &nbsp;&nbsp;
+                                <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td><span class="badge badge-primary">true</span></td>
+                            <td>
+                                <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
+                                &nbsp;&nbsp;
+                                <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
+                                &nbsp;&nbsp;
+                                <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td><span class="badge badge-primary">true</span></td>
+                            <td>
+                                <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
+                                &nbsp;&nbsp;
+                                <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
+                                &nbsp;&nbsp;
+                                <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td><span class="badge badge-primary">true</span></td>
+                            <td>
+                                <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
+                                &nbsp;&nbsp;
+                                <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
+                                &nbsp;&nbsp;
+                                <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td><span class="badge badge-primary">true</span></td>
+                            <td>
+                                <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
+                                &nbsp;&nbsp;
+                                <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
+                                &nbsp;&nbsp;
+                                <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Modal Adicionar-->
+    <div class="modal fade" id="adicionaModal" tabindex="-1" role="dialog" aria-labelledby="adicionaModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-light text-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="adicionaModal">Modal Adicionar Livros</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <h5>ID</h5>
+                        <input type="text" class="form-control" placeholder="Titulo aqui">
+                    </div>
+                    <div class="col-6">
+                        <h5>Titulo</h5>
+                        <input type="text" class="form-control" placeholder="Titulo aqui">
+                    </div>
+                    <div class="col-6">
+                        <h5>Autor</h5>
+                        <input type="text" class="form-control" placeholder="Autor Aqui">
+                    </div>
+                    <div class="col-6">
+                        <h5>Categoria</h5>
+                        <input type="text" class="form-control" placeholder="Categoria Aqui">
+                    </div>
+                    <div class="col-6">
+                        <h5>Status</h5>
+                        <input type="text" class="form-control" placeholder="Status Aqui">
+                    </div>
+                    <div class="col-6">
+                        <h5>Preço</h5>
+                        <input type="text" class="form-control" placeholder="Preço Aqui">
+                    </div>
+                    <div class="col-12">
+                        <h5>Descrição</h5>
+                        <textarea class="form-control"name="descrição" id="" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, eos quibusdam ex quos illo optio expedita nostrum eveniet iure quaerat? Deserunt, quidem. Recusandae accusamus architecto consectetur, tempora consequuntur voluptates magnam.</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success">Salvar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Inativar-->
+    <div class="modal fade" id="inativarModal" tabindex="-1" role="dialog" aria-labelledby="inativarModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content bg-light text-dark">
+        <div class="modal-header">
+            <h5 class="modal-title" id="inativarModal">Modal Inativar Livro</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="text-group mb-3">
+                <h5 class="text-center">Insira o ID do Livro</h5>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="ID">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Salvar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- Modal Info-->
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="infoModal">Modal De Informações<h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <h5>ID</h5>
+                        <p class="lead">ID aqui</p>
+                    </div>
+                    <div class="col-6">
+                        <h5>Titulo</h5>
+                        <p class="lead">Titulo aqui</p>
+                    </div>
+                    <div class="col-6">
+                        <h5>Autor</h5>
+                        <p class="lead">Autor Aqui</p>
+                    </div>
+                    <div class="col-6">
+                        <h5>Categoria</h5>
+                        <p class="lead">Categoria Aqui</p>
+                    </div>
+                    <div class="col-6">
+                        <h5>Status</h5>
+                        <p class="lead text-info">True</p>
+                    </div>
+                    <div class="col-6">
+                        <h5>Preço</h5>
+                        <p class="lead text-danger">R$:20.56</p>
+                    </div>
+                    <div class="col-12">
+                        <h5>Descrição</h5>
+                        <p class="lead ">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero facilis porro nam voluptatem quam harum odio, dignissimos repudiandae, voluptate quod, molestias amet. Ullam corrupti quod, facilis sequi rem tempore veniam.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum libero corrupti voluptate mollitia incidunt ullam accusantium. Non minus quae, accusantium, perferendis exercitationem esse, autem inventore veritatis possimus cum quam doloribus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Editar-->
+    <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="editarModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-xl" role="document">
+            <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editarModal">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <h5>ID</h5>
+                        <input type="text" class="form-control" placeholder="Titulo aqui">
+                    </div>
+                    <div class="col-6">
+                        <h5>Titulo</h5>
+                        <input type="text" class="form-control" placeholder="Titulo aqui">
+                    </div>
+                    <div class="col-6">
+                        <h5>Autor</h5>
+                        <input type="text" class="form-control" placeholder="Autor Aqui">
+                    </div>
+                    <div class="col-6">
+                        <h5>Categoria</h5>
+                        <input type="text" class="form-control" placeholder="Categoria Aqui">
+                    </div>
+                    <div class="col-6">
+                        <h5>Status</h5>
+                        <input type="text" class="form-control" placeholder="Status Aqui">
+                    </div>
+                    <div class="col-6">
+                        <h5>Preço</h5>
+                        <input type="text" class="form-control" placeholder="Preço Aqui">
+                    </div>
+                    <div class="col-12">
+                        <h5>Descrição</h5>
+                        <textarea class="form-control"name="descrição" id="" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, eos quibusdam ex quos illo optio expedita nostrum eveniet iure quaerat? Deserunt, quidem. Recusandae accusamus architecto consectetur, tempora consequuntur voluptates magnam.</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Salvar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Desativar-->
+    <div class="modal fade" id="desativarModal" tabindex="-1" role="dialog" aria-labelledby="desativarModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-light text-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="desativarModal">Desativar Livro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <i class="fas fa-exclamation-triangle text-warning display-4"></i>
+                <br>
+                <h3>Deseja Realmente Inativar Esse Livro?</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger">Sim</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

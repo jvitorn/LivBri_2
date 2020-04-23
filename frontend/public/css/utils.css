@@ -1,0 +1,131 @@
+.card{
+    max-height: 450px;
+    height:420px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    
+}
+.card .btn{
+    align-content: flex-end;
+    text-align: center;
+    display: flex;
+    align-items: end;
+}
+.card-title{
+    margin-bottom: 0rem;
+    text-overflow:initial;
+    white-space:nowrap;
+}
+.card-text{
+    font-weight: lighter;
+    margin-bottom: 0;
+}
+.card-prices{
+    font-weight: initial;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.card-img-top{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 65%;
+    height: auto;
+    max-height: 45%;
+}
+.card-icons{
+    max-height: 450px;
+    height:130px;
+    overflow: hidden;
+   padding: 0.5rem;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.card-icons .fas{
+    font-size: 47px;
+}
+.card-icons:hover{
+    color:#17a2b8;
+    border-radius: 30px;
+    border: solid 1px #17a2b8   ;
+}
+.card-icons p{
+    margin-top:2px;
+    font-weight: bolder;
+    
+}
+.recentes-card .card-descricao{
+    white-space:normal;
+    width: 90%;
+    height: 30%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+/* tables */    
+@media only screen and (max-width: 990px) {
+        
+    .card{
+        height:370px;
+        max-height: 95%;
+        overflow: hidden;
+        margin-bottom: 0.5rem;
+    }
+    .card-icons{
+        max-height: 150px;
+        height:100px;
+        overflow: hidden;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    } 
+    .card-icons .card-body{
+        padding: 0.5rem;
+    }
+    .card-prices{
+        font-weight: initial;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+    .card-text{
+        font-weight: lighter;
+        margin-bottom: 0;
+        font-size: 13px;
+    }
+    .card-img-top{
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 50%;
+        height: auto;
+        max-height: 50%;
+    }
+}
+    /* mobile */
+@media only screen and (max-width: 765px) {
+        .card-icons{
+            max-height: 100px;
+            height:50px;
+            overflow: hidden;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        } 
+        .card-icons .card-body{
+            padding: 0.5rem;
+        }
+        .card{
+            height:500px;
+            overflow: hidden;
+            margin-bottom: 1.0rem;
+        }
+        .card-img-top{
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 65%;
+            height: auto;
+            max-height: 60%;
+        }
+}

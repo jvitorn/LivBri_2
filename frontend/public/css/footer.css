@@ -1,0 +1,7 @@
+.list-group-flush li{
+    background-color: #343a40!important;
+    color:white
+}
+.list-group-flush li:hover{
+    color:#17a2b8;
+}

@@ -1,0 +1,14 @@
+.login-form{
+    padding: 7rem;
+    margin: 3rem;
+}
+.login{
+    margin-bottom: 0;
+}
+.login-img{
+    background-image: url('https://i.zst.com.br/images/livros-enem-photo695669592-44-24-19.jpg');
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}

@@ -2,6 +2,8 @@ const Livro = require("../models/livro");
 const path = require('path');
 const routes = {
     list:'/livros',
+    searchBookId:'/livros/:id',
+    searchBook:'/livros/busca',
     listCategory:'/livros/categoria/:category',
     category:'/categoria',
     active:'/livros/ativar'
@@ -26,6 +28,16 @@ module.exports = (app)=>{
         .put((req,res)=>{
             const { id } = req.body;
             Livro.inativar(id,res);
+        })
+    app.route(routes.searchBookId)
+        .get((req,res)=>{
+            const id  = req.params.id;
+            Livro.listarLivro(id,res);
+        })
+    app.route(routes.searchBook)
+        .post((req,res)=>{
+            const { titulo } = req.body;
+            Livro.buscarLivro(titulo,res);
         })
     app.route(routes.listCategory)
         .get((req,res)=>{

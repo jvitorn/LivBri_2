@@ -1,0 +1,22 @@
+    .Recentes{
+        margin-top: 2.5rem;
+    }
+    .recentes-card{
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    .recentes-card-categoria{
+        font-weight: lighter;
+        font-size: x-small;
+        margin-bottom: 0.5rem;
+    }
+    .card-icons .fas{
+        font-size: 47px;
+    }
+   
+    section.Preco .card{
+        border:solid 1px lightskyblue;
+    }
+    section.Banner{
+        margin-bottom: 2.5rem;
+    }

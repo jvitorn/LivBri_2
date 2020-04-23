@@ -55,6 +55,28 @@ class LivroDao{
             res.status(400).json(error);
         })
     }
+    listarLivro(id,res){
+        const Livro = mongoose.model('livros');
+        //mostrando todos os livros
+        Livro.findOne({_id:id, status: true})
+        .then((results)=>{
+            res.status(202).json(results);
+        })
+        .catch((error)=>{
+            res.status(400).json(error);
+        })
+    }
+    buscarLivro(livro,res){
+        const Livro = mongoose.model('livros');
+        //mostrando todos os livros
+        Livro.find({titulo : {$regex:livro},status:true})
+        .then((results)=>{
+            res.status(202).json(results);
+        })
+        .catch((error)=>{
+            res.status(400).json(error);
+        })
+    }
     inativar(id,res){
         const Livro = mongoose.model('livros');
         const update = { status: false }

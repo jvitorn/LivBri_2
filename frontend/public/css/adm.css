@@ -1,0 +1,39 @@
+.noturno{
+    background-color: #15171c;
+    color:white
+}
+.display-5{
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+.conteudo{
+    margin-top: 4rem;
+}
+.painel-box{
+    margin-top: 2rem;
+    padding: 2.5rem;
+    margin-left: 2rem;
+    height: 170px;
+    max-height:250px;
+    border-radius: 20px;
+    margin-bottom: 2.5rem;
+}
+input[type=text].pesquisa{
+    background-color: #1c1e22;
+    text-align: center;
+}
+.icon-menu-itens{
+    border: solid 1px white;
+    padding: 0.5rem;
+    text-align: center;
+    align-items: center;
+}
+.icon-menu-itens:hover{
+    color:#17a2b8;
+    border-radius: 25px;
+}
+.icon-menu-itens .fas{
+    font-size:85px;
+}
