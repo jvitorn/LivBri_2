@@ -2,19 +2,19 @@
         <!-- LIVRO PAGE -->
         <section class="row livro">
             <div class="col-md-6 livro-img">
-                <img src="http://lojasaraiva.vteximg.com.br/arquivos/ids/12101382/1009410142.jpg?v=637142219587830000" class="img-fluid" alt="" srcset="">
+                <img src="{{livroUnico.imagem}}" class="img-fluid" alt="" srcset="">
             </div>
             <div class="col-md-6 livro-info">
                 <div class="text-group">
-                    <h3 class="display-5">As Crônicas De Nárnia - Volume Único</h3>
+                    <h3 class="display-5">{{livroUnico.titulo}}</h3>
                     <hr>
-                    <span class="autor-livro">Autor :</span><span> C.S Lewis</span>
+                    <span class="autor-livro">Autor :</span><span>{{livroUnico.autor}}</span>
                     <br>
-                    <span class="autor-livro">Categoria :</span><span> Fantasia</span>
+                    <span class="autor-livro">Categoria :</span><span>{{livroUnico.categoria}}</span>
                     <hr>
                     <h3 class="display-5">Descrição</h3>
-                    <p>Viagens ao fim do mundo, criaturas fantásticas e batalhas épicas entre o bem e o mal - o que mais um leitor poderia querer de um livro? O livro que tem tudo isso é ''O leão, a feiticeira e o guarda-roupa'', escrito em 1949 por Clive Staples Lewis. Mas Lewis não parou por aí. Seis outros livros vieram depois e, juntos, ficaram conhecidos como ''As crônicas de Nárnia''. Nos últimos cinqüenta anos, ''As crônicas de Nárnia'' transcenderam o gênero da fantasia para se tornar parte do cânone da literatura clássica</p>
-                    <h2 class="display-4 mb-3">R$65.90</h2>
+                    <p>{{livroUnico.descricao}}</p>
+                    <h2 class="display-4 mb-3">{{livroUnico.preco | currency:"R$"}}</h2>
                     <button class="btn btn-outline-danger">Comprar Agora</button>
                 </div>  
             </div>

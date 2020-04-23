@@ -24,6 +24,9 @@
     <script type="text/javascript" src="js/controllers/index-controller.js"></script>
     <script src="js/controllers/livro-controller.js"></script>
     <script src="js/controllers/login-controller.js"></script>
+    <script src="js/controllers/pesquisa-controller.js"></script>
+    <script src="js/controllers/busca-controller.js"></script>
+    <script src="js/controllers/buscaCategoriaController.js"></script>
 
 </head>
 <body>
@@ -44,7 +47,7 @@
                       Departamentos
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                      <a class="dropdown-item" href="/home/busca?categoria={{x.categoria}}" ng-repeat="x in categorias">{{x.categoria}}</a>
+                      <a class="dropdown-item" href="/home/busca/{{x.categoria}}" ng-repeat="x in categorias">{{x.categoria}}</a>
                     </div>
                   </li>
                   <li class="nav-item">
@@ -52,13 +55,14 @@
                   </li>
 
             </ul>
-            <form class="form-inline">
-                <input class="form-control" type="search" placeholder="Pesquisar">
-                <a class="btn btn-dark" href="/home/busca">Busca</a>
+            <form class="form-inline" ng-controller="PesquisaController" ng-submit="submeter()"> 
+                <input class="form-control" type="search" ng-model="pesquisar" placeholder="Pesquisar">
+                <input class="btn btn-dark" type="submit" >
             </form>
             </div>
         </div>
       </section>
+      <h3>{{pesquisar}}</h3>
     <div  id="teste" class="container">
         <ng-view></ng-view>
     </div>

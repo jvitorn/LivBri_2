@@ -68,8 +68,9 @@ class LivroDao{
     }
     buscarLivro(livro,res){
         const Livro = mongoose.model('livros');
+        const pesquisa = livro; 
         //mostrando todos os livros
-        Livro.find({titulo : {$regex:livro},status:true})
+        Livro.find({titulo : {$regex:pesquisa},status:true})
         .then((results)=>{
             res.status(202).json(results);
         })
