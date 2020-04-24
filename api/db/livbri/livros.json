@@ -1,0 +1,110 @@
+{ 
+    "_id" : ObjectId("5ea18c7d7d002719a40e61a2"), 
+    "titulo" : "Harry Potter e A Pedra Filosofal 1", 
+    "autor" : "J. K. Rowling", 
+    "categoria" : "Fantasia", 
+    "imagem" : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12110250/1007739147.jpg?v=637142252496370000", 
+    "descricao" : "Harry Potter é um garoto cujos pais, feiticeiros, foram assassinados por um poderosíssimo bruxo quando ele ainda era um bebê. Ele foi levado, então, para a casa dos tios que nada tinham a ver com o sobrenatural. Pelo contrário. Até os 10 anos, Harry foi uma espécie de gata borralheira: maltratado pelos tios, herdava roupas velhas do primo gorducho, tinha óculos remendados e era tratado como um estorvo. No dia de seu aniversário de 11 anos, entretanto, ele parece deslizar por um buraco sem fundo, como o de Alice no país das maravilhas, que o conduz a um mundo mágico. Descobre sua verdadeira história e seu destino: ser um aprendiz de feiticeiro até o dia em que terá que enfrentar a pior força do mal, o homem que assassinou seus pais. O menino de olhos verde, magricela e desengonçado, tão habituado à rejeição, descobre, também, que é um herói no universo dos magos", 
+    "preco" : 29.93, 
+    "status" : true, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea193fd91601f2144f72f48"), 
+    "titulo" : "Harry Potter e A Câmara Secreta 2", 
+    "autor" : "J. K. Rowling", 
+    "categoria" : "Fantasia", 
+    "imagem" : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12100503/1007817940.jpg?v=637142217019530000", 
+    "descricao" : "Os Dursley estavam tão anti-sociais naquele verão, que tudo o que Harry queria era voltar às aulas da Escola de Bruxarias de Hogwarts. No entanto, quando já terminava de fazer suas malas, Harry recebe um aviso de um estranho chamado Dobby, que diz que um desastre acontecerá caso Potter decida voltar à Hogwarts. Harry não liga para aquela mensagem e o desastre realmente acontece. Naquele segundo ano estudando em Hogwarts, novos horrores surgem para atormentar Harry, incluindo o novo professor Gilderoy Lockhart e um espírito chamado Moaning Myrtle, que assombra o banheiro feminino, além de olhares indesejados da irmã mais nova de Ron Weasley, Ginny. Todos esses problemas, no entanto, parecem menores quando o verdadeiro problema começa e algo transforma os alunos de Hogwarts em pedra. Dentre os suspeitos: o próprio Harry. Descubra o fim desta aventura emocionante.", 
+    "preco" : 31.12, 
+    "status" : true, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea1b26f8c29d9271ceccbb6"), 
+    "titulo" : "O Último Desejo - The Witcher - A Saga Do Bruxo Geralt De Rivia - Vol. 1 - Capa Clássica", 
+    "autor" : "Andrzej Sapkowski", 
+    "categoria" : "Fantasia", 
+    "imagem" : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12604724/1010073892.jpg?v=6371526872856700000", 
+    "descricao" : "Geralt de Rívia é um bruxo sagaz e habilidoso. Um assassino impiedoso e de sangue-frio treinado, desde a infância, para caçar e eliminar monstros. Seu único objetivo: destruir as criaturas do mal que assolam o mundo. Um mundo fantástico criado por Sapkowski com claras influências da mitologia eslava. Um mundo em que nem todos os que parecem monstros são maus nem todos os que parecem anjos são bons...", 
+    "preco" : 49.9, 
+    "status" : true, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea1b2fa8c29d9271ceccbb7"), 
+    "titulo" : "Vilão", 
+    "autor" : "V. E. Schwab", 
+    "categoria" : "Ficção", 
+    "imagem" : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12115613/1008438826.jpg?v=637142272315970000", 
+    "descricao" : "Uma história sobre ambição, inveja, desejo e superpoderes, da autora da série Tons de Magia. Victor e Eli, dois jovens brilhantes, arrogantes e solitários, se conheceram na Universidade de Merit e logo se deram bem, identificando um no outro a mesma sagacidade e a mesma ambição. No último ano da faculdade, o interesse em comum numa pesquisa sobre adrenalina, experiências de quase morte e poderes sobrenaturais lhes oferece uma possibilidade antes inimaginável: de que uma pessoa, sob as condições certas, seja capaz de desenvolver habilidades extraordinárias. No entanto, quando colocam em prática essa teoria, as coisas dão muito errado. Dez anos depois, Victor foge da prisão, determinado a encontrar seu antigo amigo — agora inimigo. Para localizá-lo, ele conta com a ajuda de uma garotinha, Sydney, cuja natureza reservada esconde uma habilidade sem igual, mas extremamente perigosa. Enquanto isso, há dez anos Eli tem uma única missão: erradicar todas as pessoas ExtraOrdinárias que encontra — exceto sua ajudante, Serena, uma mulher enigmática e persuasiva, capaz de impor sua vontade a qualquer um. Armado com poderes terríveis e movido pela lembrança da traição e da perda, Victor caça seu arqui-inimigo em busca de vingança e de um embate no qual sabe que um dos dois deve morrer.", 
+    "preco" : 49.9, 
+    "status" : true, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea1b3ec8c29d9271ceccbb8"), 
+    "titulo" : "O Hobbit", 
+    "autor" : "J. R. R Tolkien", 
+    "categoria" : "Ficção", 
+    "imagem" : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12116412/1008621081.jpg?v=637142275191900000", 
+    "descricao" : "O Hobbit conquistou fãs de todas as idades no mundo inteiro. Ao narrar os acontecimentos anteriores de O Senhor dos Anéis, o livro passou a ser admirado e estudado pos todos os amantes da mitologia tolkeniana. Contudo, vale lembrar que, desde sua origem, O Hobbit sempre foi um livro para o público infantojuvenil. Concebido e escrito como uma história de ninar para os filhos do autor. Essa edição, em brochura, procura se manter fiel ao público-alvo da jornada de Bilbo: as crianças. Para isso, o livro contém, na íntegra, a mesma tradução da narrativa que compõe a versão em capa dura, além das ilustrações originais de Tolkien. Mas, com o objetivo de manter o livro mais acessível aos jovens, elimina os textos acessórios, cujo caráter é mais acadêmico", 
+    "preco" : 44.9, 
+    "status" : true, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea1ecebbc2696041cbf36a4"), 
+    "titulo" : "Harry Potter e O Prisioneiro De Azkaban 3", 
+    "autor" : "J. K. Rowling", 
+    "categoria" : "Fantasia", 
+    "imagem" : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12110252/1007804406.jpg?v=637142252500600000", 
+    "descricao" : "As aulas estão de volta à Hogwarts e Harry Potter não vê a hora de embarcar no expresso a vapor que o levará de volta à escola de bruxaria. Mais uma vez suas férias na rua dos Alfeneiros foi triste e solitária. Com muita ação, humor e magia, 'Harry Potter e o prisioneiro de Azkaban' traz de volta o gigante atrapalhado Rúbeo Hagrid, o sábio diretor Alvo Dumbledore, a exigente professora de transformação Minerva MacGonagall e o novo mestre Lupin, que guarda grandes surpresas para Harry.", 
+    "preco" : 49.9, 
+    "status" : true, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea1f6c8bc2696041cbf36a5"), 
+    "titulo" : "As Crônicas De Nárnia - Volume Único", 
+    "autor" : "C S. Lewis", 
+    "categoria" : "Fantasia", 
+    "imagem" : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12101382/1009410142.jpg?v=637142219587830000", 
+    "descricao" : "Viagens ao fim do mundo, criaturas fantásticas e batalhas épicas entre o bem e o mal - o que mais um leitor poderia querer de um livro? O livro que tem tudo isso é ''O leão, a feiticeira e o guarda-roupa'', escrito em 1949 por Clive Staples Lewis. MasLewis não parou por aí. Seis outros livros vieram depois e, juntos, ficaram conhecidos como ''As crônicas de Nárnia''. Nos últimos cinqüenta anos, ''As crônicas de Nárnia'' transcenderam o gênero da fantasia para se tornar parte do cânone da literatura clássica. Cada um dos sete livros é uma obra-prima, atraindo o leitor para um mundo em que a magia encontra a realidade, e o resultado é um mundo ficcional que tem fascinado gerações...", 
+    "preco" : 39.9, 
+    "status" : true, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea1f7b1bc2696041cbf36a6"), 
+    "titulo" : "A Lei de Murphy e os Médicos", 
+    "autor" : "Arthur Bloch", 
+    "categoria" : "Humor", 
+    "imagem" : "http://lojasaraiva.vteximg.com.br/arquivos/ids/1462618/112064.jpg?v=637003913616270000", 
+    "descricao" : "Seja um paciente ou um cirurgião, uma enfermeira ou um clínico, ninguém está imune aos princípios básicos da Lei de Murphy. Com um agravante: quando algo dá errado na medicina, os resultados podem se mais desastrosos que em qualquer outra área. O melhor remédio, então, é relaxar e rir com uma dose extra da catastrófica Lei de Murphy, baseada nas mais avançadas especialidades da ciência médica moderna. Com textos adaptados por Ota e ilustrações de Jaguar, descubra os efeitos da mais antiga lei do mundo quando aplicada aos homens de branco e divirta-se...", 
+    "preco" : 21.63, 
+    "status" : true, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea1f8f6bc2696041cbf36a7"), 
+    "titulo" : "A Culpa É Das Estrelas", 
+    "autor" : "Jhon Green", 
+    "categoria" : "Romance", 
+    "imagem" : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12103022/1006803643.jpg?v=637142225200500000", 
+    "descricao" : "Hazel é uma paciente terminal. Ainda que, por um milagre da medicina, seu tumor tenha encolhido bastante — o que lhe dá a promessa de viver mais alguns anos —, o último capítulo de sua história foi escrito no momento do diagnóstico. Mas em todo bom enredo há uma reviravolta, e a de Hazel se chama Augustus Waters, um garoto bonito que certo dia aparece no Grupo de Apoio a Crianças com Câncer. Juntos, os dois vão preencher o pequeno infinito das páginas em branco de suas vidas...", 
+    "preco" : 30.72, 
+    "status" : true, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea1f961bc2696041cbf36a8"), 
+    "titulo" : "Cinquenta Tons de Cinza", 
+    "autor" : "E. L. James", 
+    "categoria" : "Romance", 
+    "imagem" : "http://lojasaraiva.vteximg.com.br/arquivos/ids/12103001/1006790814.jpg?v=637142225123270000", 
+    "descricao" : "Quando Anastasia Steele entrevista o jovem empresário Christian Grey, descobre nele um homem atraente, brilhante e profundamente dominador. Ingênua e inocente, Ana se surpreende ao perceber que, a despeito da enigmática reserva de Grey, está desesperadamente atraída por ele. Incapaz de resistir à beleza discreta, à timidez e ao espírito independente de Ana, Grey admite que também a deseja — mas em seus próprios termos.Chocada e ao mesmo tempo seduzida pelas estranhas preferências de Grey, Ana hesita. Por trás da fachada de sucesso — os negócios multinacionais, a vasta fortuna, a amada família —, Grey é um homem atormentado por demônios do passado e consumido pela necessidade de controle...", 
+    "preco" : 44.9, 
+    "status" : true, 
+    "__v" : NumberInt(0)
+}
