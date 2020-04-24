@@ -1,15 +1,6 @@
 angular.module('livbri').controller('LoginController',function($scope,$http){
     // adicionar container fluid
-    function Fluida (){
-        const container = document.getElementById('teste');
-        const classeFluida = document.getElementsByClassName('container');
-            if(classeFluida){
-                container.classList.remove('container');
-                container.classList.add('container-fluid');
-            }
-    }
-    Fluida();
-
+   
     $scope.idLogin = '';
     $scope.login = ()=>{
         const login = {id:$scope.idLogin};
@@ -27,4 +18,14 @@ angular.module('livbri').controller('LoginController',function($scope,$http){
             console.log(error)
         })
     }
+    function fluida (){
+        const container = document.getElementById('teste');
+        const classeFluida = document.getElementsByClassName('container');
+            if(classeFluida){
+                container.classList.remove('container');
+                container.classList.add('container-fluid');
+            }
+    }
+    fluida();
+
 })

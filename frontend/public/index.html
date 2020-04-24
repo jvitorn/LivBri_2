@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- home  css -->
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/utils.css">
+    <link id="css" rel="stylesheet" href="css/utils.css">
     <link rel="stylesheet" href="css/livro.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/adm/adm.css">
      <!-- Font Awesome -->
      <script src="https://kit.fontawesome.com/3732f07a5a.js" crossorigin="anonymous"></script>
     <!-- angular -->
@@ -27,11 +28,11 @@
     <script src="js/controllers/pesquisa-controller.js"></script>
     <script src="js/controllers/busca-controller.js"></script>
     <script src="js/controllers/buscaCategoriaController.js"></script>
-    <script src="js/controllers/painelController.js"></script>
+    <script src="js/controllers/adm/painelController.js"></script>
 
 </head>
-<body>
-    <section class="navbar navbar-expand-lg navbar-dark bg-info p-4">
+<body id="noturno">
+    <section id="nav" class="navbar navbar-expand-lg navbar-dark bg-info p-4">
         <div class="container" >
             <a class="navbar-brand" href="#"><small>Livbri</small></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +55,7 @@
                   <li class="nav-item">
                     <a class="nav-link" href="/home/login">Login</a>
                   </li>
-
+    
             </ul>
             <form class="form-inline" ng-controller="PesquisaController" ng-submit="submeter()"> 
                 <input class="form-control" type="search" ng-model="pesquisar" placeholder="Pesquisar">
@@ -62,13 +63,12 @@
             </form>
             </div>
         </div>
-      </section>
-      <h3>{{pesquisar}}</h3>
-    <div  id="teste" class="container">
+    </section>
+    <div id="teste" class="container">
         <ng-view></ng-view>
     </div>
 </body>
-<footer> 
+<footer id="footer"> 
     <div class="bg-dark">
         <div class="container-fluid ">
             <div class="row mt-2">

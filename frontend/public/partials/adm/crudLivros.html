@@ -1,32 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <title>Home</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- bootstrap script -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- css -->
-    <link rel="stylesheet" href="css/adm.css">
-    <link rel="stylesheet" href="css/inatiaLivros.css">
-     <!-- Font Awesome -->
-     <script src="https://kit.fontawesome.com/3732f07a5a.js" crossorigin="anonymous"></script>
-     <style>
-         .table-inativar{
-            box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 white;  
-         }
-         td.crud-livro-descrip{
-            width: 150px;	
-            white-space: pre;
-         }
-     </style>
-</head>
-<body class="noturno">
-    <div class="container">
-        <section class="row crud-header">
+
+    <section class="row crud-header">
             <div class="col-12 mt-4">
                 <section class="row menu">
                     <!-- icons -->
@@ -73,8 +46,8 @@
                 </section>
             </div>
             <div class="col-2"></div>
-        </section>
-        <section class="row crud-info">
+    </section>
+    <section class="row crud-info">
             <div class="col-md-12">
                 <div class="row">
                     <div class="text-group">
@@ -82,8 +55,8 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="row crud-btn-send">
+    </section>
+    <section class="row crud-btn-send">
             <div class="col-md-6">
                 <div class="form-group mt-3">
                     <button class="btn btn-success" data-toggle="modal" data-target="#adicionaModal">Adicionar Livro</button>
@@ -92,98 +65,105 @@
                     <a class="btn btn-light" href="index.html">Voltar p/ Site</a>
                 </div>
             </div>
-        </section>
-        <section class="row crud-table-book">
-            <div class="col-md-12 ">
-                <div class="row">
-                    <table class="table table-light  table-striped table-hover shadow">
-                        <thead class="">
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Titulo</th>
-                            <th scope="col">Autor</th>
-                            <th scope="col">Categoria</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td><span class="badge badge-primary">true</span></td>
-                            <td>
-                                <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
-                                &nbsp;&nbsp;
-                                <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
-                                &nbsp;&nbsp;
-                                <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td><span class="badge badge-primary">true</span></td>
-                            <td>
-                                <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
-                                &nbsp;&nbsp;
-                                <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
-                                &nbsp;&nbsp;
-                                <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td><span class="badge badge-primary">true</span></td>
-                            <td>
-                                <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
-                                &nbsp;&nbsp;
-                                <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
-                                &nbsp;&nbsp;
-                                <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td><span class="badge badge-primary">true</span></td>
-                            <td>
-                                <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
-                                &nbsp;&nbsp;
-                                <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
-                                &nbsp;&nbsp;
-                                <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td><span class="badge badge-primary">true</span></td>
-                            <td>
-                                <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
-                                &nbsp;&nbsp;
-                                <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
-                                &nbsp;&nbsp;
-                                <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+    </section>
+    <section class="row crud-table-book">
+        <div class="col-md-12">
+            <div class="card mb-5">
+                <div class="card-header text-dark">Tabela Livros</div>
+                <div class="card-body">
+                    <input type="text" class="form-control mb-4" placeholder="Pesquisa">
+                    <div class="col-md-12 ">
+                        <div class="row">
+                            <table class="table table-light  table-striped table-hover shadow">
+                                <thead class="">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Titulo</th>
+                                    <th scope="col">Autor</th>
+                                    <th scope="col">Categoria</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td><span class="badge badge-primary">true</span></td>
+                                    <td>
+                                        <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
+                                        &nbsp;&nbsp;
+                                        <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
+                                        &nbsp;&nbsp;
+                                        <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td><span class="badge badge-primary">true</span></td>
+                                    <td>
+                                        <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
+                                        &nbsp;&nbsp;
+                                        <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
+                                        &nbsp;&nbsp;
+                                        <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td><span class="badge badge-primary">true</span></td>
+                                    <td>
+                                        <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
+                                        &nbsp;&nbsp;
+                                        <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
+                                        &nbsp;&nbsp;
+                                        <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                    <td><span class="badge badge-primary">true</span></td>
+                                    <td>
+                                        <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
+                                        &nbsp;&nbsp;
+                                        <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
+                                        &nbsp;&nbsp;
+                                        <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td><span class="badge badge-primary">true</span></td>
+                                    <td>
+                                        <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
+                                        &nbsp;&nbsp;
+                                        <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
+                                        &nbsp;&nbsp;
+                                        <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
     <!-- Modal Adicionar-->
     <div class="modal fade" id="adicionaModal" tabindex="-1" role="dialog" aria-labelledby="adicionaModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -380,6 +360,3 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>

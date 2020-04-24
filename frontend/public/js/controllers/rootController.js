@@ -16,4 +16,7 @@ angular.module('livbri').run(function($rootScope,$http){
           }
 
     }
+
+  
+
 });

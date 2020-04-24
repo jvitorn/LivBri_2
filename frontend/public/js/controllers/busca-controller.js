@@ -5,7 +5,7 @@ angular.module('livbri').controller('BuscaController',function($scope,$routePara
             container.classList.remove('container-fluid');
             container.classList.add('container');
         }
-    console.log('entrou no controller de busca');
+    
     // verificando se tem algum parametro passado por get 'q'
     if($routeParams.q){
         //apos isso armazenamos um resultado
