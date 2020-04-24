@@ -16,3 +16,6 @@ Seguindo a analise de dados anterior,vamos utilizar os seguintes dados :
 **Coleção Usuario**
 * id_usuario
 * Nome
+
+## API 
+É separada pelas requisições de cada coleção do mongo 
