@@ -1,5 +1,5 @@
 angular.module('livbri').controller('CrudController',function($scope,$http){
-
+    $scope.listaLivros = [];
     //remover conteudo desnecessario
     function removerConteudo(){
         const navbar = document.getElementById('nav');
@@ -23,9 +23,38 @@ angular.module('livbri').controller('CrudController',function($scope,$http){
 
     //verificação de login
     if(localStorage.getItem('id')){
-        console.log('entrou no if');
+
     }else{
         window.location.href='/home/login';
     }
 
+    //chamando livros
+    $http.get('http://localhost:3333/livros/total')
+    .then(results=>{
+        $scope.listaLivros = results.data;
+    })
+    .catch(error=>{
+        console.log(error)
+    })
+    
+
+    //funções de capturar dados
+    $scope.visualizar = function(livro){
+        $scope.livroStatusSelecionado = livro.status;
+        $scope.livroCategoriaSelecionado = livro.categoria;
+        $scope.infoLivro = livro;
+
+        document.getElementById('mySelect').value = $scope.livroStatusSelecionado;
+        document.getElementById('categoria').value = $scope.livroCategoriaSelecionado;
+
+    }  
+    
+    $http.get('http://localhost:3333/categoria')
+    .then(results=>{
+        $scope.categoria = results.data;
+    })
+    .catch(error=>{
+    
+    })
+    
 });

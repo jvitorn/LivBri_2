@@ -6,21 +6,21 @@
                     <div class="col-md-6 mb-5">
                         <div class="row">
                            <div class="col-md-3 icon-menu-itens-crud">
-                            <a href="adicionaLivros.html" class="text-warning stretched-link">
+                            <a href="/adm/crud" class="text-warning stretched-link">
                                 <i class="fas fa-plus text-success"></i>
                                 <br>
                                 Adicionar Livro
                             </a>
                             </div>
                             <div class="col-md-3 icon-menu-itens-crud">
-                                <a href="adicionaLivros.html" class="text-warning stretched-link">
+                                <a href="/adm/crud" class="text-warning stretched-link">
                                     <i class="fas fa-ban text-info"></i>
                                     <br>Inativar Livro
                                 </a>
                             </div>
                         
                             <div class="col-md-3 icon-menu-itens-crud">
-                                <a href="adicionaLivros.html" class="text-warning stretched-link">
+                                <a href="/adm/crud" class="text-warning stretched-link">
                                     <i class="fas fa-book-medical text-danger"></i><br>
                                     Reativar Livro
                                 </a>
@@ -72,12 +72,12 @@
                 <div class="card-header text-dark">Tabela Livros</div>
                 <div class="card-body">
                     <input type="text" class="form-control mb-4" placeholder="Pesquisa">
+                    <!-- lista de livros -->
                     <div class="col-md-12 ">
                         <div class="row">
-                            <table class="table table-light  table-striped table-hover shadow">
+                            <table class="table table-responsive table-crud-livros table-light table-striped  table-hover  shadow">
                                 <thead class="">
                                 <tr>
-                                    <th scope="col">#</th>
                                     <th scope="col">Titulo</th>
                                     <th scope="col">Autor</th>
                                     <th scope="col">Categoria</th>
@@ -86,74 +86,17 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td><span class="badge badge-primary">true</span></td>
+                                <tr ng-repeat="livro in listaLivros">
+                                    <td>{{livro.titulo}}</td>
+                                    <td>{{livro.autor}}</td>
+                                    <td>{{livro.categoria}}</td>
+                                    <td><span class="badge badge-warning">{{livro.status}}</span></td>
                                     <td>
-                                        <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
+                                        <a href="#"  ng-click="visualizar(livro)"><i class="fas fa-eye text-primary"  data-toggle="modal" data-target="#infoModal"></i></a>
                                         &nbsp;&nbsp;
-                                        <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
+                                        <a href="#" ng-click="visualizar(livro)"><i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i></a>
                                         &nbsp;&nbsp;
-                                        <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td><span class="badge badge-primary">true</span></td>
-                                    <td>
-                                        <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
-                                        &nbsp;&nbsp;
-                                        <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
-                                        &nbsp;&nbsp;
-                                        <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td><span class="badge badge-primary">true</span></td>
-                                    <td>
-                                        <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
-                                        &nbsp;&nbsp;
-                                        <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
-                                        &nbsp;&nbsp;
-                                        <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td><span class="badge badge-primary">true</span></td>
-                                    <td>
-                                        <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
-                                        &nbsp;&nbsp;
-                                        <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
-                                        &nbsp;&nbsp;
-                                        <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                    <td><span class="badge badge-primary">true</span></td>
-                                    <td>
-                                        <i class="fas fa-eye text-primary" data-toggle="modal" data-target="#infoModal"></i>
-                                        &nbsp;&nbsp;
-                                        <i class="fas fa-pen text-warning" data-toggle="modal" data-target="#editarModal"></i>
-                                        &nbsp;&nbsp;
-                                        <i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i>
+                                        <a href="#" ng-click="visualizar(livro)"><i class="fas fa-trash-alt text-danger" data-toggle="modal" data-target="#desativarModal"></i></a>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -176,11 +119,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-6">
-                        <h5>ID</h5>
-                        <input type="text" class="form-control" placeholder="Titulo aqui">
-                    </div>
-                    <div class="col-6">
+                    <div class="col-12">
                         <h5>Titulo</h5>
                         <input type="text" class="form-control" placeholder="Titulo aqui">
                     </div>
@@ -190,11 +129,13 @@
                     </div>
                     <div class="col-6">
                         <h5>Categoria</h5>
-                        <input type="text" class="form-control" placeholder="Categoria Aqui">
+                        <select class="form-control">
+                            <option ng-repeat="categorias in categoria" value="{{categorias.categoria}}">{{categorias.categoria}}</option>
+                        </select>
                     </div>
                     <div class="col-6">
-                        <h5>Status</h5>
-                        <input type="text" class="form-control" placeholder="Status Aqui">
+                        <h5>Imagem</h5>
+                        <input type="text" class="form-control" placeholder="URL Aqui">
                     </div>
                     <div class="col-6">
                         <h5>Preço</h5>
@@ -215,7 +156,8 @@
     </div>
     <!-- Modal Inativar-->
     <div class="modal fade" id="inativarModal" tabindex="-1" role="dialog" aria-labelledby="inativarModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document" >
+        <form ng-controller="ModalVisualizarController" ng-submit="inativarUsuario()">
         <div class="modal-content bg-light text-dark">
         <div class="modal-header">
             <h5 class="modal-title" id="inativarModal">Modal Inativar Livro</h5>
@@ -226,20 +168,22 @@
         <div class="modal-body">
             <div class="text-group mb-3">
                 <h5 class="text-center">Insira o ID do Livro</h5>
+                <h5>{{idInativarUsuario}}</h5>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="ID">
+                <input type="text" class="form-control" placeholder="ID" ng-model="idInativarUsuario">
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Salvar</button>
+            <input type="submit" class="btn btn-primary">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
+        </form>
         </div>
     </div>
     </div>
     <!-- Modal Info-->
-    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog"  aria-labelledby="infoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content bg-dark">
             <div class="modal-header">
@@ -252,33 +196,32 @@
                 <div class="row">
                     <div class="col-6">
                         <h5>ID</h5>
-                        <p class="lead">ID aqui</p>
+                        <p class="lead">{{infoLivro._id}}</p>
                     </div>
                     <div class="col-6">
                         <h5>Titulo</h5>
-                        <p class="lead">Titulo aqui</p>
+                        <p class="lead">{{infoLivro.titulo}}</p>
                     </div>
                     <div class="col-6">
                         <h5>Autor</h5>
-                        <p class="lead">Autor Aqui</p>
+                        <p class="lead">{{infoLivro.autor}}</p>
                     </div>
                     <div class="col-6">
                         <h5>Categoria</h5>
-                        <p class="lead">Categoria Aqui</p>
+                        <p class="lead">{{infoLivro.categoria}}</p>
                     </div>
                     <div class="col-6">
                         <h5>Status</h5>
-                        <p class="lead text-info">True</p>
+                        <p class="lead text-info">{{infoLivro.status}}</p>
                     </div>
                     <div class="col-6">
                         <h5>Preço</h5>
-                        <p class="lead text-danger">R$:20.56</p>
+                        <p class="lead text-danger">{{infoLivro.preco| currency:"R$"}}</p>
                     </div>
                     <div class="col-12">
                         <h5>Descrição</h5>
                         <p class="lead ">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero facilis porro nam voluptatem quam harum odio, dignissimos repudiandae, voluptate quod, molestias amet. Ullam corrupti quod, facilis sequi rem tempore veniam.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum libero corrupti voluptate mollitia incidunt ullam accusantium. Non minus quae, accusantium, perferendis exercitationem esse, autem inventore veritatis possimus cum quam doloribus.
+                            {{infoLivro.descricao}}
                         </p>
                     </div>
                 </div>
@@ -303,31 +246,36 @@
                 <div class="row">
                     <div class="col-6">
                         <h5>ID</h5>
-                        <input type="text" class="form-control" placeholder="Titulo aqui">
+                        <input type="text" class="form-control" placeholder="Titulo aqui" ng-bind="{{infoLivro._id}}" value="{{infoLivro._id}}">
                     </div>
                     <div class="col-6">
                         <h5>Titulo</h5>
-                        <input type="text" class="form-control" placeholder="Titulo aqui">
+                        <input type="text" class="form-control" placeholder="Titulo aqui" value="{{infoLivro.titulo}}">
                     </div>
                     <div class="col-6">
                         <h5>Autor</h5>
-                        <input type="text" class="form-control" placeholder="Autor Aqui">
+                        <input type="text" class="form-control" placeholder="Autor Aqui" value="{{infoLivro.autor}}">
                     </div>
                     <div class="col-6">
                         <h5>Categoria</h5>
-                        <input type="text" class="form-control" placeholder="Categoria Aqui">
+                        <select id="categoria" class="form-control">
+                            <option ng-repeat="categorias in categoria" value="{{categorias.categoria}}">{{categorias.categoria}}</option>
+                        </select>
                     </div>
                     <div class="col-6">
                         <h5>Status</h5>
-                        <input type="text" class="form-control" placeholder="Status Aqui">
+                        <select id="mySelect" class="form-control">
+                           <option value="true">true</option>
+                           <option value="false">false</option>
+                        </select>
                     </div>
                     <div class="col-6">
                         <h5>Preço</h5>
-                        <input type="text" class="form-control" placeholder="Preço Aqui">
+                        <input type="text" class="form-control" placeholder="Preço Aqui" value="{{infoLivro.preco}}">
                     </div>
                     <div class="col-12">
                         <h5>Descrição</h5>
-                        <textarea class="form-control"name="descrição" id="" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, eos quibusdam ex quos illo optio expedita nostrum eveniet iure quaerat? Deserunt, quidem. Recusandae accusamus architecto consectetur, tempora consequuntur voluptates magnam.</textarea>
+                        <textarea class="form-control"name="descrição" id="" cols="30" rows="10">{{infoLivro.descricao}}</textarea>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ const routes = {
 }
 
 module.exports =  (app) => {
-    app.route(routes.list)
+    app.route(routes.list)  
         .get((req,res)=>{
             Usuario.listar(res);
         })

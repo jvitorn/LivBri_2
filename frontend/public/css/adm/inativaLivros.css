@@ -5,3 +5,8 @@
     width: 150px;	
     white-space: pre;
  }
+ table.table-crud-livros tbody tr td{
+    padding: 0.5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+ }
