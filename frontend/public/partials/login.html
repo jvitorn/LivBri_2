@@ -5,12 +5,16 @@
                         <div class="col-md-12 login-form">
                             <div class="text-group text-center align-center">
                                 <h2 class="display-4">Login</h2>
-                                <form class="mt-5">
+                                <div class="form-group col-12">
+                                    <span class="alert alert-danger text-center" ng-show="msg">{{msg}}</span>
+                                </div>
+                                <form class="mt-5" ng-submit="login()">
+                                    
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-lg" placeholder="Coloque o ID informado">
+                                        <input type="text" class="form-control form-control-lg" ng-model="idLogin" placeholder="Coloque o ID informado">
                                     </div>
                                     <div class="form-group">
-                                        <a class="btn btn-block btn-success" href="painel.html">Acessar</a>
+                                        <button class="btn btn-block btn-success">Acessar</button>
                                     </div> 
                                     <div class="form-group">
                                         Esqueci <a href="#" class="text-success">meu ID</a>

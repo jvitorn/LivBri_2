@@ -49,7 +49,7 @@ class UsuarioDao{
             res.status(202).json({nome:results.nome});
         })
         .catch((error)=>{
-            res.status(400).json({msg:"Erro ao logar usuario ao banco de dados",error});
+            res.status(400).json({msg:"Erro ao logar usuario,favor tente novamente!",error});
         })
 
     }

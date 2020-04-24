@@ -31,6 +31,11 @@ angular.module('livbri', ['ngRoute'])
 			controller:'BuscaCategoriaController'
 		});
 		
+		$routeProvider.when('/adm/painel',{
+			templateUrl:'partials/painel.html',
+			controller:'PainelController'
+		})
+
 		$routeProvider.otherwise({redirectTo: '/home'});
 
 	});
