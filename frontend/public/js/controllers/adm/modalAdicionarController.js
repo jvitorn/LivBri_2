@@ -23,7 +23,7 @@ angular.module('livbri').controller('ModalAdicionarController',function($scope,$
                 console.log(error);
                 console.log(error.message);
                 const msgErro = error.message;
-                //alerta
+                //alerta    
                 Swal.fire({
                   icon: 'error',
                   title: 'Erro',

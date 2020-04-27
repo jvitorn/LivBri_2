@@ -60,24 +60,16 @@ angular.module('livbri').controller('CrudController',function($scope,$http){
     
     
     //função dos changes 
-    $scope.preco = (livro)=> {
-        console.log(livro);
-    }
-    $scope.descricao = (livro)=> {
-        console.log(livro);
-    }
-    $scope.status = (livro)=>{
-        console.log(livro)
-    }
-    $scope.autor = (livro)=>{
-        console.log(livro)
-    }
-    $scope.categoria = (livro)=>{
-        console.log(livro)
-    }
-    $scope.titulo =(livro)=>{
-        console.log(livro._id)
-        const editarTitulo = {titulo:livro.titulo};
-        console.log(editarTitulo)
+    $scope.enviarEdicao = (livro)=>{
+        
+        if(livro){
+            $http.post('http://localhost:3333/livros/atualizar',livro)
+            .then(results=>{
+                console.log(results)
+            })
+            .catch(error=>{
+                console.log(error)
+            })
+        }
     }
 });

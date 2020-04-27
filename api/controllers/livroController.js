@@ -8,6 +8,7 @@ const routes = {
     listCategory:'/livros/categoria/:category',
     category:'/categoria',
     active:'/livros/ativar',
+    update:'/livros/atualizar',
     deactivate:'/livros/inativar'
 }
 /*
@@ -64,5 +65,9 @@ module.exports = (app)=>{
             const id  = req.body;
             Livro.inativar(id,res);
         })
-
+    app.route(routes.update)
+        .post((req,res)=>{
+            const livro = req.body;
+            Livro.atualizar(livro,res);
+        })
 }

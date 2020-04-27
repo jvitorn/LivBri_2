@@ -112,6 +112,19 @@ class LivroDao{
             res.status(400).json(error);
         })
     }
+    atualizar(livro,res){
+        const Livro = mongoose.model('livros');
+        
+        const update = {titulo:livro.titulo,autor:livro.autor,categoria:livro.categoria,imagem:livro.imagem,descricao:livro.descricao,preco:livro.preco}
+
+        Livro.updateOne({_id:livro._id},update)
+        .then(results=>{
+            res.status(201).json({msg:"Dados Do Livro Atualizado",result:results,id:livro._id});
+        })
+        .catch(error=>{
+            res.status(400).json(error);
+        })
+    }
     
 }
 module.exports = new LivroDao;
