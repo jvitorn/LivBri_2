@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 class LivroDao{
     criar(livro,res){
         const { titulo,autor,categoria,imagem,descricao,preco} = livro;
+        const precoNumber = parseInt(preco);
         const Livro = mongoose.model('livros');
         const inserir = new Livro({
             titulo:titulo,

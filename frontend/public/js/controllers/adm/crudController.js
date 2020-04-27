@@ -48,13 +48,14 @@ angular.module('livbri').controller('CrudController',function($scope,$http){
         document.getElementById('categoria').value = $scope.livroCategoriaSelecionado;
 
     }  
-    
+    //chamando categorias
     $http.get('http://localhost:3333/categoria')
     .then(results=>{
         $scope.categoria = results.data;
     })
     .catch(error=>{
-    
+        Swal.fire(error);
+        console.log(error);
     })
     
 });
