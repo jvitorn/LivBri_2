@@ -11,13 +11,24 @@ angular.module('livbri').controller('ModalAdicionarController',function($scope,$
                 console.log(results.data.titulo);
                 const mensagem = results.data.msg;
                 const mensagemTitulo = results.data.titulo;
-
-                Swal.fire(mensagem,"Titulo do Livro"+mensagemTitulo);
+                //alerta
+                Swal.fire(
+                    mensagem,
+                    'Titulo do livro:'+mensagemTitulo,
+                    'success'
+                  )
             })
             //tratando erros
             .catch(error=>{
                 console.log(error);
                 console.log(error.message);
+                const msgErro = error.message;
+                //alerta
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Erro',
+                  text: msgErro,
+                })
             })
         }
         

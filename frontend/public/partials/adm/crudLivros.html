@@ -61,8 +61,8 @@
                 <div class="form-group mt-3">
                     <button class="btn btn-success" data-toggle="modal" data-target="#adicionaModal">Adicionar Livro</button>
                     <button class="btn btn-primary" data-toggle="modal" data-target="#inativarModal">Inativar Livro</button>
-                    <a class="btn btn-danger" href="painel.html">Voltar p/ Painel</a>
-                    <a class="btn btn-light" href="index.html">Voltar p/ Site</a>
+                    <a class="btn btn-danger" href="/adm/painel">Voltar p/ Painel</a>
+                    <a class="btn btn-light" href="/home">Voltar p/ Site</a>
                 </div>
             </div>
     </section>
@@ -71,8 +71,7 @@
             <div class="card mb-5">
                 <div class="card-header text-dark">Tabela Livros</div>
                 <div class="card-body">
-                    <h5>{{novoLivro}}</h5>
-                    <input type="text" class="form-control mb-4" placeholder="Pesquisa">
+                    <input type="text" ng-model="filtro" class="form-control mb-4" placeholder="Pesquisa">
                     <!-- lista de livros -->
                     <div class="col-md-12 ">
                         <div class="row">
@@ -87,7 +86,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr ng-repeat="livro in listaLivros">
+                                <tr ng-repeat="livro in listaLivros | filter :filtro">
                                     <td>{{livro.titulo}}</td>
                                     <td>{{livro.autor}}</td>
                                     <td>{{livro.categoria}}</td>
@@ -107,7 +106,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
     <!-- Modal Adicionar-->
     <div class="modal fade" id="adicionaModal" tabindex="-1" role="dialog" aria-labelledby="adicionaModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -246,7 +245,7 @@
         <div class="modal-dialog  modal-xl" role="document">
             <div class="modal-content bg-dark">
             <div class="modal-header">
-                <h5 class="modal-title" id="editarModal">Modal title</h5>
+                <h5 class="modal-title" id="editarModal" >Modal title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -255,36 +254,36 @@
                 <div class="row">
                     <div class="col-6">
                         <h5>ID</h5>
-                        <input type="text" class="form-control" placeholder="Titulo aqui" ng-bind="{{infoLivro._id}}" value="{{infoLivro._id}}">
+                        <input type="text" class="form-control" placeholder="Titulo aqui"  disabled value="{{infoLivro._id}}">
                     </div>
                     <div class="col-6">
                         <h5>Titulo</h5>
-                        <input type="text" class="form-control" placeholder="Titulo aqui" value="{{infoLivro.titulo}}">
+                        <input type="text" class="form-control" placeholder="Titulo aqui"ng-change="titulo(infoLivro)" ng-model="infoLivro.titulo">
                     </div>
                     <div class="col-6">
                         <h5>Autor</h5>
-                        <input type="text" class="form-control" placeholder="Autor Aqui" value="{{infoLivro.autor}}">
+                        <input type="text" class="form-control" placeholder="Autor Aqui" ng-change="autor(infoLivro.autor)" ng-model="infoLivro.autor">
                     </div>
                     <div class="col-6">
                         <h5>Categoria</h5>
-                        <select id="categoria" class="form-control">
-                            <option ng-repeat="categorias in categoria" value="{{categorias.categoria}}">{{categorias.categoria}}</option>
+                        <select id="categoria" class="form-control" ng-change="categoria(infoLivro.categoria)" ng-model="infoLivro.categoria">
+                            <option ng-repeat="categorias in categoria"  value="{{categorias.categoria}}">{{categorias.categoria}}</option>
                         </select>
                     </div>
                     <div class="col-6">
                         <h5>Status</h5>
-                        <select id="mySelect" class="form-control">
+                        <select id="mySelect" class="form-control" ng-change="status(infoLivro.status)" ng-model="infoLivro.status">
                            <option value="true">true</option>
                            <option value="false">false</option>
                         </select>
                     </div>
                     <div class="col-6">
                         <h5>Preço</h5>
-                        <input type="text" class="form-control" placeholder="Preço Aqui" value="{{infoLivro.preco}}">
+                        <input type="text" class="form-control" ng-change="preco(infoLivro.preco)" ng-model="infoLivro.preco"  placeholder="Preço Aqui" >
                     </div>
                     <div class="col-12">
                         <h5>Descrição</h5>
-                        <textarea class="form-control"name="descrição" id="" cols="30" rows="10">{{infoLivro.descricao}}</textarea>
+                        <textarea class="form-control" name="descrição" ng-change="descricao(infoLivro.descricao)" ng-model="infoLivro.descricao" id="" cols="30" rows="10"></textarea>
                     </div>
                 </div>
             </div>

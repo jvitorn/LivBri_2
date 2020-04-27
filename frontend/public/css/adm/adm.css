@@ -2,10 +2,7 @@
     background-color: #15171c;
     color:white
 }
-input.ng-valid ,select.ng-valid,textarea.ng-valid{
-    background-color:lightgreen;
-    color:white;
-}
+
 .display-5{
     font-size: 2.5rem;
     font-weight: 300;

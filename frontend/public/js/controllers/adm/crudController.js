@@ -58,4 +58,26 @@ angular.module('livbri').controller('CrudController',function($scope,$http){
         console.log(error);
     })
     
+    
+    //função dos changes 
+    $scope.preco = (livro)=> {
+        console.log(livro);
+    }
+    $scope.descricao = (livro)=> {
+        console.log(livro);
+    }
+    $scope.status = (livro)=>{
+        console.log(livro)
+    }
+    $scope.autor = (livro)=>{
+        console.log(livro)
+    }
+    $scope.categoria = (livro)=>{
+        console.log(livro)
+    }
+    $scope.titulo =(livro)=>{
+        console.log(livro._id)
+        const editarTitulo = {titulo:livro.titulo};
+        console.log(editarTitulo)
+    }
 });
