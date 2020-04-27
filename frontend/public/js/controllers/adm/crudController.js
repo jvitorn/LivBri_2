@@ -66,6 +66,13 @@ angular.module('livbri').controller('CrudController',function($scope,$http){
             $http.post('http://localhost:3333/livros/atualizar',livro)
             .then(results=>{
                 console.log(results)
+                const mensagem = results.data.msg;
+                const id        = results.data.id;
+                Swal.fire(
+                    id,
+                    mensagem,
+                    'success'
+                  )
             })
             .catch(error=>{
                 console.log(error)

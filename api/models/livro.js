@@ -114,8 +114,8 @@ class LivroDao{
     }
     atualizar(livro,res){
         const Livro = mongoose.model('livros');
-        
-        const update = {titulo:livro.titulo,autor:livro.autor,categoria:livro.categoria,imagem:livro.imagem,descricao:livro.descricao,preco:livro.preco}
+
+        const update = {titulo:livro.titulo,status:livro.status,autor:livro.autor,categoria:livro.categoria,imagem:livro.imagem,descricao:livro.descricao,preco:livro.preco}
 
         Livro.updateOne({_id:livro._id},update)
         .then(results=>{
