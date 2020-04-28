@@ -45,6 +45,39 @@ class LivroDao{
             res.status(400).json(error);
         })
     }
+    precosBaixos(res){
+        const Livro = mongoose.model('livros');
+        //mostrando preços
+        Livro.find({status:true}).sort({preco:1}).limit(4)
+        .then((results)=>{
+            res.status(202).json(results);
+        })
+        .catch((error)=>{
+            res.status(400).json(error);
+        })
+    }
+    contagemTotal(res){
+        const Livro = mongoose.model('livros');
+        //contagem
+        Livro.count({})
+        .then((results)=>{
+            res.status(202).json(results);
+        })
+        .catch((error)=>{
+            res.status(400).json(error);
+        })
+    }
+    contagemAtivos(res){
+        const Livro = mongoose.model('livros');
+        //contagem
+        Livro.count({status:false})
+        .then((results)=>{
+            res.status(202).json(results);
+        })
+        .catch((error)=>{
+            res.status(400).json(error);
+        }) 
+    }
     listarTodos(res){
         const Livro = mongoose.model('livros');
         //mostrando todos os livros

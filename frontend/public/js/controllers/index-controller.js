@@ -4,12 +4,18 @@ angular.module('livbri').controller('IndexController',function($scope,$location,
                 $location.path('/home/busca/'+categoria);
         }
         //api livros recentes
-        $http.get('http://localhost:3333/livros/recent')
+        $http.get($rootScope.api+'/recent')
         .then(results=>{
                 $scope.bookRecent = results.data;
         })
         .catch(error=>console.error)
-
+        //api livros preco
+        $http.get($rootScope.api+'/precos')
+        .then(results=>{
+            $scope.bookPrices = results.data;
+            console.log($scope.bookPrices)
+        })
+        .catch(error=>console.error)
         function adicionarConteudo(){
             const navbar = document.getElementById('nav');
             const navCont = document.getElementById('navConainer');
@@ -40,6 +46,6 @@ angular.module('livbri').controller('IndexController',function($scope,$location,
         }
 
         adicionarConteudo();
-      
+        
        
 });

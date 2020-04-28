@@ -43,6 +43,7 @@
                             <div class="card-body">
                                 <h6 class="card-title text-center">{{recentes.titulo}}</h6>
                                 <span class="recentes-card-categoria">{{recentes.categoria}}</span>
+                                <p class="card-text mt-1 card-descricao">{{recentes.descricao}}</p>
                                 <p class="card-prices">{{recentes.preco | currency:'R$'}}</p>
                                 <a href="/home/livro/{{recentes._id}}" class="btn btn-block btn-outline-info">Ver Mais</a>
                             </div>
@@ -149,54 +150,18 @@
               <!-- tamanho -->
               <div class="row">
                   <!-- cards -->
-                  <div class=" col-lg-3 col-md-6  col-12 col-sm-12">
+                  <div class=" col-lg-3 col-md-6  col-12 col-sm-12" ng-repeat="precos in bookPrices">
                        <div class="card recentes-card">
-                           <img src="http://lojasaraiva.vteximg.com.br/arquivos/ids/12117317/1009410431.jpg?v=637142278690700000" class="card-img-top img-fluid" alt="...">
-                           <div class="card-body">
-                               <h6 class="card-title text-center">Dracula Edição de Luxo</h6>
-                               <span class="recentes-card-categoria">Categoria</span>
-                               <p class="card-text mt-1">Aqui vai uma descrição breve do texto.</p>
-                               <p class="card-prices">R$:34.90</p>
-                               <a href="#" class="btn btn-block btn-outline-dark">Ver Mais</a>
-                           </div>
+                           <img src="{{precos.imagem}}" class="card-img-top img-fluid" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">{{precos.titulo}}</h6>
+                                <span class="recentes-card-categoria">{{precos.categoria}}</span>
+                                <p class="card-text mt-1 card-descricao">{{precos.descricao}}</p>
+                                <p class="card-prices">{{precos.preco | currency:'R$'}}</p>
+                                <a href="/home/livro/{{precos._id}}" class="btn btn-block btn-outline-info">Ver Mais</a>
+                            </div>
                        </div>
                    </div>
-                  <div class="col-lg-3 col-md-6  col-12 col-sm-12">
-                   <div class="card recentes-card">
-                       <img src="http://lojasaraiva.vteximg.com.br/arquivos/ids/12564499/1010073032.jpg?v=637152462077370000" class="card-img-top img-fluid" alt="...">
-                       <div class="card-body">
-                           <h6 class="card-title">O Tatuador De Auschwitz</h6>
-                           <span class="recentes-card-categoria">Historia</span>
-                           <p class="card-text mt-1">Aqui vai uma descrição breve do texto.</p>
-                           <p class="card-prices">R$:34.90</p>
-                           <a href="#" class="btn btn-block btn-outline-dark">Ver Mais</a>
-                       </div>
-                   </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6  col-12 col-sm-12">
-                   <div class="card recentes-card">
-                       <img src="http://lojasaraiva.vteximg.com.br/arquivos/ids/12117385/1009577922.jpg?v=637142278941130000" class="card-img-top " alt="...">
-                       <div class="card-body">
-                           <h6 class="card-title">Frankenstein - Edição Luxo</h6>
-                           <span class="recentes-card-categoria">Ficção</span>
-                           <p class="card-text mt-1">Aqui vai uma descrição breve do texto.</p>
-                           <p class="card-prices">R$:69.90</p>
-                           <a href="#" class="btn btn-block btn-outline-dark">Ver Mais</a>
-                       </div>
-                   </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6  col-12 col-sm-12">
-                   <div class="card recentes-card">
-                       <img src="http://lojasaraiva.vteximg.com.br/arquivos/ids/12101382/1009410142.jpg?v=637142219587830000" class="card-img-top " alt="...">
-                       <div class="card-body">
-                           <h6 class="card-title">As Crônicas De Nárnia - Volume Único</h6>
-                           <span class="recentes-card-categoria">Fantasia</span>
-                           <p class="card-text mt-1">Aqui vai uma descrição breve do texto.</p>
-                           <p class="card-prices">R$:39.90</p>
-                           <a href="#" class="btn btn-block btn-outline-dark">Ver Mais</a>
-                       </div>
-                   </div>
-                  </div>
               </div>
           </div>
       </section>

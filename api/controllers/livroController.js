@@ -4,12 +4,15 @@ const routes = {
     list:'/livros',
     listRecent:'/livros/recent',
     listTotal:'/livros/total',
+    prices:'/livros/precos',
     searchBookId:'/livros/:id',
     searchBook:'/livros/busca/:search',
     listCategory:'/livros/categoria/:category',
     active:'/livros/ativar',
     update:'/livros/atualizar',
     deactivate:'/livros/inativar',
+    countTotal:'/livros/count/count',
+    countdeactivate:'/livros/countinative/count',
     category:'/categoria'
 }
 /*
@@ -40,6 +43,10 @@ module.exports = (app)=>{
     app.route(routes.listTotal)
         .get((req,res)=>{
             Livro.listarTodos(res);
+        })
+    app.route(routes.prices)
+        .get((req,res)=>{
+           Livro.precosBaixos(res); 
         })
     app.route(routes.searchBookId)
         .get((req,res)=>{
@@ -75,5 +82,13 @@ module.exports = (app)=>{
         .post((req,res)=>{
             const livro = req.body;
             Livro.atualizar(livro,res);
+        })
+    app.route(routes.countTotal)
+        .get((req,res)=>{ 
+            Livro.contagemTotal(res);
+        })
+    app.route(routes.countdeactivate)
+        .get((req,res)=>{
+            Livro.contagemAtivos(res);
         })
 }

@@ -1,6 +1,6 @@
 angular.module('livbri').run(function($rootScope,$http){
     $rootScope.pesquisar = '';
-
+    $rootScope.api = 'http://localhost:3333/livros';
     $rootScope.categorias = [];
         $http.get("http://localhost:3333/categoria")
          .then(function(response) {

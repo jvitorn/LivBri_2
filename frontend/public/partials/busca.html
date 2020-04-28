@@ -15,7 +15,7 @@
                     <img class="d-block w-100" src="https://lojasaraiva.vteximg.com.br/arquivos/ids/18058410/1504_tv_jornada-empreendedora.png?v=637225879856270000" alt="Second slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" src="https://lojasaraiva.vteximg.com.br/arquivos/ids/18058405/1504_tv_livro-e-na-saraiva-generica.png?v=637225879507500000" alt="Third slide">
+                    <img class="d-block w-100" src="https://lojasaraiva.vteximg.com.br/arquivos/ids/18534915/2304_tv_100-mais-vendidos.png?v=637233492240470000" alt="Third slide">
                   </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -45,7 +45,7 @@
                              <img src="{{result.imagem}}" class="card-img-top img-fluid" alt="...">
                              <div class="card-body">
                                  <h6 class="card-title text-center">{{result.titulo}}</h6>
-                                 <span class="recentes-card-categoria">Fantasia</span>
+                                 <span class="recentes-card-categoria">{{result.categoria}}</span>
                                  <p class="card-text mt-1 card-descricao">{{result.descricao}}</p>
                                  <p class="card-prices">{{result.preco | currency:"R$" }}</p>
                                  <a href="/home/livro/{{result._id}}" class="btn btn-block btn-outline-info">Ver Mais</a>
