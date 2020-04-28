@@ -13,7 +13,6 @@ angular.module('livbri').controller('IndexController',function($scope,$location,
         $http.get($rootScope.api+'/precos')
         .then(results=>{
             $scope.bookPrices = results.data;
-            console.log($scope.bookPrices)
         })
         .catch(error=>console.error)
         function adicionarConteudo(){
