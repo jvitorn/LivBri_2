@@ -23,5 +23,6 @@ angular.module('livbri').run(function($rootScope,$http){
     $rootScope.footerConteudo = footer.childNodes[0].parentNode;
     $rootScope.navConteudo = navbar.childNodes[0].parentNode;
     $rootScope.cssConteudo = estilo;
+    
 
 });

@@ -1,4 +1,4 @@
-angular.module('livbri').controller('PainelController',function($scope,$rootScope){
+angular.module('livbri').controller('PainelController',function($scope,$location){
 
     //remover conteudo desnecessario
     function removerConteudo(){
@@ -14,7 +14,7 @@ angular.module('livbri').controller('PainelController',function($scope,$rootScop
             bodyNoturno.classList.add('noturno');
         }
         //removendo footer e navbar
-        if(navbar.parentNode&&footer.parentNode){
+        if(navbar&&footer){
             console.log('removeu o conteudo')
             //remove conteudo
             css.parentNode.removeChild(css);
@@ -42,6 +42,10 @@ angular.module('livbri').controller('PainelController',function($scope,$rootScop
         }
     }else{
         window.location.href='/home/login';
+    }
+
+    $scope.irPara = (link)=>{
+        $location.path('/adm/'+link);
     }
 
 });
