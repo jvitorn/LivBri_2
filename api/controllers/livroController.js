@@ -2,14 +2,15 @@ const Livro = require("../models/livro");
 const path = require('path');   
 const routes = {
     list:'/livros',
+    listRecent:'/livros/recent',
     listTotal:'/livros/total',
     searchBookId:'/livros/:id',
     searchBook:'/livros/busca/:search',
     listCategory:'/livros/categoria/:category',
-    category:'/categoria',
     active:'/livros/ativar',
     update:'/livros/atualizar',
-    deactivate:'/livros/inativar'
+    deactivate:'/livros/inativar',
+    category:'/categoria'
 }
 /*
     db.livros.find({categoria:{$exists:true}}).map(function(u){
@@ -31,6 +32,10 @@ module.exports = (app)=>{
         .put((req,res)=>{
             const { id } = req.body;
             Livro.inativar(id,res);
+        })
+    app.route(routes.listRecent)
+        .get((req,res)=>{
+            Livro.listarRecent(res);
         })
     app.route(routes.listTotal)
         .get((req,res)=>{
@@ -63,6 +68,7 @@ module.exports = (app)=>{
     app.route(routes.deactivate)
         .put((req,res)=>{
             const id  = req.body;
+            console.log(id)
             Livro.inativar(id,res);
         })
     app.route(routes.update)

@@ -23,7 +23,13 @@ angular.module('livbri').controller('CrudController',function($scope,$http){
 
     //verificação de login
     if(localStorage.getItem('id')){
-
+        const id = localStorage.getItem('id').length;
+        console.log(id);
+        if(id <= 24){
+            $scope.adm = localStorage.getItem('nome');
+        }else{
+            window.location.href='/home/login';   
+        }
     }else{
         window.location.href='/home/login';
     }
@@ -78,5 +84,26 @@ angular.module('livbri').controller('CrudController',function($scope,$http){
                 console.log(error)
             })
         }
+    }
+    //inativar
+    $scope.inativarIcon = (id)=>{
+     
+        if(id){
+            const teste = {_id:id}
+            $http.put('http://localhost:3333/livros/inativar',teste)
+            .then(results=>{
+                const msg = results.data.msg;
+                const result = results.data.result;
+                const _id = results.data.id;
+                console.log(results);
+                Swal.fire(
+                    'Sucesso',
+                    msg,
+                    'success'
+                  )
+            })
+            .catch(error=>console.error);
+        }
+        
     }
 });

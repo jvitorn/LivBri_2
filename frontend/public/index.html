@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="livbri">
-<head>
+<head id="cssContainer">
     <base href="/">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/adm/adm.css">
     <link rel="stylesheet" href="css/adm/inativaLivros.css">
      <!-- Font Awesome -->
-     <script src="https://kit.fontawesome.com/3732f07a5a.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3732f07a5a.js" crossorigin="anonymous"></script>
     <!-- sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!-- angular -->
@@ -39,9 +39,9 @@
 
 </head>
 <body id="noturno">
-    <section id="nav" class="navbar navbar-expand-lg navbar-dark bg-info p-4">
-        <div class="container" >
-            <a class="navbar-brand" href="#"><small>Livbri</small></a>
+    <section id="navConainer" class="navbar navbar-expand-lg navbar-dark bg-info p-4">
+        <div id="nav" class="container" >
+            <a class="navbar-brand" href="#"><b>Livbri</b></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -75,8 +75,8 @@
         <ng-view></ng-view>
     </div>
 </body>
-<footer id="footer"> 
-    <div class="bg-dark">
+<footer id="footerContainer"> 
+    <div id="footer" class="bg-dark">
         <div class="container-fluid ">
             <div class="row mt-2">
                 <!-- Logotipos -->

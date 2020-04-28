@@ -34,6 +34,17 @@ class LivroDao{
             res.status(400).json(error);
         })
     }
+    listarRecent(res){
+        const Livro = mongoose.model('livros');
+        //mostrando todos os livros
+        Livro.find({status:true}).sort({_id:-1}).limit(4)
+        .then((results)=>{
+            res.status(202).json(results);
+        })
+        .catch((error)=>{
+            res.status(400).json(error);
+        })
+    }
     listarTodos(res){
         const Livro = mongoose.model('livros');
         //mostrando todos os livros
@@ -93,6 +104,7 @@ class LivroDao{
     inativar(id,res){
         const Livro = mongoose.model('livros');
         const update = { status: false }
+        
         Livro.updateOne({_id:id},update)
         .then((results)=>{
             res.status(201).json({msg:"Livro Inativado",result:results,id:id});
@@ -115,7 +127,7 @@ class LivroDao{
     atualizar(livro,res){
         const Livro = mongoose.model('livros');
 
-        const update = {titulo:livro.titulo,status:livro.status,autor:livro.autor,categoria:livro.categoria,imagem:livro.imagem,descricao:livro.descricao,preco:livro.preco}
+        const update = {titulo:livro.titulo,status:livro.status ,autor:livro.autor,categoria:livro.categoria,imagem:livro.imagem,descricao:livro.descricao,preco:livro.preco}
 
         Livro.updateOne({_id:livro._id},update)
         .then(results=>{

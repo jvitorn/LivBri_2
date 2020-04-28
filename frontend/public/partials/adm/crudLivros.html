@@ -1,64 +1,35 @@
 
     <section class="row crud-header">
-            <div class="col-12 mt-4">
+            <div class="col-12 mt-5">
                 <section class="row menu">
                     <!-- icons -->
-                    <div class="col-md-6 mb-5">
-                        <div class="row">
-                           <div class="col-md-3 icon-menu-itens-crud">
-                            <a href="/adm/crud" class="text-warning stretched-link">
-                                <i class="fas fa-plus text-success"></i>
-                                <br>
-                                Adicionar Livro
-                            </a>
-                            </div>
-                            <div class="col-md-3 icon-menu-itens-crud">
-                                <a href="/adm/crud" class="text-warning stretched-link">
-                                    <i class="fas fa-ban text-info"></i>
-                                    <br>Inativar Livro
-                                </a>
-                            </div>
-                        
-                            <div class="col-md-3 icon-menu-itens-crud">
-                                <a href="/adm/crud" class="text-warning stretched-link">
-                                    <i class="fas fa-book-medical text-danger"></i><br>
-                                    Reativar Livro
-                                </a>
-                            </div>
-                            <div class="col-md-3 icon-menu-itens-crud">
-                                <a href="index.html" class="text-warning stretched-link">
-                                    <i class="fas fa-door-open text-primary"></i><br>
-                                    Voltar P/ Home
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-md-3 mb-5 mt-1">
                         <div class="form-group">
                             <input type="text" class="form-control pesquisa" placeholder="Pesquisa">
                         </div>
                     </div>
-                    <div class="col-md-3 text-right">
+                    <div class="col-md-3 col-12 text-right">
                         <div class="text-group">
-                            <h4>Bem Vindo João</h4>
+                            <h4>Bem Vindo {{adm}}</h4>
                         </div>
                     </div>
                 </section>
-            </div>
-            <div class="col-2"></div>
+            </div>  
     </section>
     <section class="row crud-info">
-            <div class="col-md-12">
+            <div class="col-md-12 ">
                 <div class="row">
-                    <div class="text-group">
-                        <h6 class="h6">CRUD Livros | <i class="fas fa-home text-info"></i> > <small> Inativar Livros </small></h6>
+                    <div class="col-12">
+                        <div class="text-group">
+                            <h6 class="h6">CRUD Livros | <i class="fas fa-home text-info"></i> > <small> Inativar Livros </small></h6>
+                        </div>
                     </div>
                 </div>
             </div>
     </section>
     <section class="row crud-btn-send">
-            <div class="col-md-6">
-                <div class="form-group mt-3">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="btn-group btn-group-lg"></div>
                     <button class="btn btn-success" data-toggle="modal" data-target="#adicionaModal">Adicionar Livro</button>
                     <button class="btn btn-primary" data-toggle="modal" data-target="#inativarModal">Inativar Livro</button>
                     <a class="btn btn-danger" href="/adm/painel">Voltar p/ Painel</a>
@@ -66,7 +37,7 @@
                 </div>
             </div>
     </section>
-    <section class="row crud-table-book">
+    <section class="row crud-table-book mt-3">
         <div class="col-md-12">
             <div class="card mb-5">
                 <div class="card-header text-dark">Tabela Livros</div>
@@ -299,6 +270,7 @@
     <!-- Modal Desativar-->
     <div class="modal fade" id="desativarModal" tabindex="-1" role="dialog" aria-labelledby="desativarModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
+            <form novalidate ng-submit="inativarIcon(infoLivro._id)">
             <div class="modal-content bg-light text-dark">
             <div class="modal-header">
                 <h5 class="modal-title" id="desativarModal">Desativar Livro</h5>
@@ -312,9 +284,10 @@
                 <h3>Deseja Realmente Inativar Esse Livro?</h3>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger">Sim</button>
+                <input type="submit" class="btn btn-danger" placeholder="Sim">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
             </div>
             </div>
+            </form>
         </div>
     </div>

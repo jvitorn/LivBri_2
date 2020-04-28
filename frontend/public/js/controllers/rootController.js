@@ -17,6 +17,11 @@ angular.module('livbri').run(function($rootScope,$http){
 
     }
 
-  
+    const navbar = document.getElementById('nav');
+    const footer = document.getElementById('footer');
+    const estilo    = document.getElementById('css');
+    $rootScope.footerConteudo = footer.childNodes[0].parentNode;
+    $rootScope.navConteudo = navbar.childNodes[0].parentNode;
+    $rootScope.cssConteudo = estilo;
 
 });

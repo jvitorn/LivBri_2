@@ -1,6 +1,6 @@
 angular.module('livbri').controller('LoginController',function($scope,$http){
     // adicionar container fluid
-   
+  
     $scope.idLogin = '';
     $scope.login = ()=>{
         const login = {id:$scope.idLogin};
