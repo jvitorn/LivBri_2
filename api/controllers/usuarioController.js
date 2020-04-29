@@ -2,7 +2,8 @@ const Usuario = require('../models/usuario');
 const routes = {
     list:'/usuario',
     listId:'/usuario/:id',
-    session:'/session'
+    session:'/session',
+    locate:'/locateId'
 }
 
 module.exports =  (app) => {
@@ -27,5 +28,9 @@ module.exports =  (app) => {
     app.post(routes.session,(req,res)=>{
         const usuario = req.body;
         Usuario.logarUsuario(usuario,res);
+    })
+    app.post(routes.locate,(req,res)=>{
+        const usuario = req.body;
+        Usuario.localizarId(usuario,res);
     })
 }

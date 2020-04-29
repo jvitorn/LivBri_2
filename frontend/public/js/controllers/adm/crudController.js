@@ -1,11 +1,9 @@
 angular.module('livbri').controller('CrudController',function($scope,$http,$rootScope){
-    console.log('entrou no crud controller');
     //verificação de login
     if(localStorage.getItem('id')){
         const id = localStorage.getItem('id').length;
         if(id <= 24){
             $scope.adm = localStorage.getItem('nome');
-            console.log($scope.adm);
         }else{
             window.location.href='/home/login';   
         }

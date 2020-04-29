@@ -23,6 +23,10 @@ angular.module('livbri', ['ngRoute','meusServicos'])
 				templateUrl:'partials/login.html',
 				controller:'LoginController'
 			});
+			$routeProvider.when(routeIndex.home+'/carrinho',{
+				templateUrl:'partials/carrinho.html',
+				controller:'CarrinhoController'
+			});
 			$routeProvider.when(routeIndex.home+'/busca',{
 				templateUrl: 'partials/busca.html',
 				controller: 'BuscaController'

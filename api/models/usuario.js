@@ -82,5 +82,19 @@ class UsuarioDao{
             res.status(400).json({msg:"Erro ao deletar o  usuario ao banco de dados",error});
         })
     }
+    localizarId(usuario,res){
+        const email = usuario.email;
+        //Collection de Usuarios
+        const Usuario = mongoose.model('usuarios');
+        //atualizar informações
+        Usuario.findOne({email:email})
+        .then((results)=>{
+            res.status(200).json(results);
+        })
+        .catch((error)=>{
+            res.status(400).json({msg:"Erro ao localizar usuario",error});
+        })
+
+    }
 }
 module.exports = new UsuarioDao;
