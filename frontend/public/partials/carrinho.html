@@ -31,14 +31,16 @@
         <div class="card bg-info text-white carrinho">
             <div class="card-header display-5">Carrinho</div>
             <div class="card-body">
-                <div class="col-md-12 ">
+                <div class="col-md-12 table-responsive">
                     <div class="row">
-                        <table class="table table-striped text-white shadow">
+                        <table class="table table-borderless table-hover text-white shadow ">
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Titulo</th>
                                 <th scope="col">Preço</th>
+                                <th scope="col">Qtd</th>
+                                <th scope="col">Ação</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -46,20 +48,32 @@
                                 <th scope="row">{{$index+1}}</th>
                                 <td>{{a.titulo}}</td>
                                 <td>{{a.valor | currency:"R$"}}</td>
+                                <td>
+                                <select ng-model="carrinho.qtd" ng-change="capturaQtd(a,carrinho)" class="form-control">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                </td>
+                                <td>&nbsp;<i class="far fa-trash-alt" ng-click=excluirCarrinho(a)></i></td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 mt-5">
-                            <div class="text-group">
-                                <h6 class="h6 display-5">Total:{{livrosTotal | currency:"R$"}}</h6>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
+        <div class="row">
+          <div class="col-md-12 mt-5">
+              <div class="text-group">
+                  <h6 class="h6 display-5">Total:{{livrosTotal | currency:"R$"}}</h6>
+              </div>
+          </div>
+        </div>
+      </div>
     </div>
 </section>
 

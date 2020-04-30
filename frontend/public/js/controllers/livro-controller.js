@@ -19,9 +19,6 @@ angular.module('livbri').controller('LivroController',function($scope,$routePara
 
     $scope.carrinho =(livro)=>{
       
-
-        
-          
         let livros = [];
        
         livros = JSON.parse(localStorage.getItem('Livros')) || [];
