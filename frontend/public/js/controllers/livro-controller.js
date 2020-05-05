@@ -1,4 +1,4 @@
-angular.module('livbri').controller('LivroController',function($scope,$routeParams,$http,$rootScope){
+angular.module('livbri').controller('LivroController',function($scope,$routeParams,$http,$rootScope,recursoLivro){
     const container = document.getElementById('teste');
     const classeFluida = document.getElementsByClassName('container-fluid');
         if(classeFluida){
@@ -8,13 +8,9 @@ angular.module('livbri').controller('LivroController',function($scope,$routePara
 
     if($routeParams.id){
           //apos isso armazenamos um resultado
-          $http.get($rootScope.api+'livros/'+$routeParams.id)
-          .then(results=>{
-            $scope.livroUnico =results.data;
-          })
-          .catch(error=>{
-            console.log(error);
-          })
+          recursoLivro.get({livroId:$routeParams.id},(results)=>{
+            $scope.livroUnico = results;
+        })
     }
 
     $scope.carrinho =(livro)=>{

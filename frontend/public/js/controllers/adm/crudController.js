@@ -1,4 +1,4 @@
-angular.module('livbri').controller('CrudController',function($scope,$http,$rootScope){
+angular.module('livbri').controller('CrudController',function($scope,$http,$rootScope,recursoLivro){
     //verificação de login
     if(localStorage.getItem('id')){
         const id = localStorage.getItem('id').length;
@@ -11,13 +11,8 @@ angular.module('livbri').controller('CrudController',function($scope,$http,$root
         window.location.href='/home/login';
     }
     //chamando livros
-    $http.get($rootScope.api+'livros/total')
-    .then(results=>{
-        $scope.listaLivros = results.data;
-
-    })
-    .catch(error=>{
-        console.log(error)
+    recursoLivro.query((results)=>{
+        $scope.listaLivros = results;
     })
     //chamando categorias
     $scope.categoria = $rootScope.categorias;
