@@ -1,6 +1,6 @@
 .card{
-    max-height: 450px;
-    height:420px;
+    max-height: 400px;
+    height:350px;
     overflow: hidden;
     margin-bottom: 2.5rem;
     
@@ -8,7 +8,7 @@
 .card .btn{
     align-content: flex-end;
     text-align: center;
-    display: flex;
+    display: block;
     align-items: end;
 }
 .card-title{
@@ -30,9 +30,10 @@
 .card-img-top{
     margin-left: auto;
     margin-right: auto;
-    max-width: 65%;
-    height: auto;
-    max-height: 45%;
+    max-width: 40%;
+    height:100px;
+    max-height: 30%;
+    display: block;
 }
 .card-icons{
     max-height: 450px;
@@ -60,7 +61,7 @@
 .recentes-card .card-descricao{
     white-space:normal;
     width: 90%;
-    height: 30%; 
+    height: 55%; 
     overflow: hidden;
     text-overflow: ellipsis; 
 }
@@ -99,9 +100,10 @@
     .card-img-top{
         margin-left: auto;
         margin-right: auto;
-        max-width: 50%;
+        max-width: 35%;
         height: auto;
-        max-height: 50%;
+        max-height: 35%;
+        display: block;
     }
 }
     /* mobile */
@@ -118,14 +120,14 @@
             padding: 0.5rem;
         }
         .card{
-            height:500px;
+            height:440px;
             overflow: hidden;
             margin-bottom: 1.0rem;
         }
         .card-img-top{
             margin-left: auto;
             margin-right: auto;
-            max-width: 65%;
+            max-width: 50%;
             height: auto;
             max-height: 60%;
         }

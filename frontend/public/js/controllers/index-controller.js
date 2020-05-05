@@ -1,16 +1,22 @@
 angular.module('livbri').controller('IndexController',function($scope,$location,$http,$rootScope){
+    const container = document.getElementById('teste');
+    const classeFluida = document.getElementsByClassName('container-fluid');
+        if(classeFluida){
+            container.classList.remove('container-fluid');
+            container.classList.add('container');
+        }
        //categoria icons
         $scope.Categoria = (categoria)=>{
                 $location.path('/home/busca/'+categoria);
         }
         //api livros recentes
-        $http.get($rootScope.api+'/recent')
+        $http.get($rootScope.api+'livros/recent')
         .then(results=>{
                 $scope.bookRecent = results.data;
         })
         .catch(error=>console.error)
         //api livros preco
-        $http.get($rootScope.api+'/precos')
+        $http.get($rootScope.api+'livros/precos')
         .then(results=>{
             $scope.bookPrices = results.data;
         })

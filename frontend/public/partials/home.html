@@ -37,17 +37,8 @@
                <!-- tamanho -->
                <div class="row">
                    <!-- cards -->
-                   <div class=" col-lg-3 col-md-6  col-12 col-sm-12" ng-repeat="recentes in bookRecent">
-                        <div class="card recentes-card">
-                            <img src="{{recentes.imagem}}" class="card-img-top img-fluid" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title text-center">{{recentes.titulo}}</h6>
-                                <span class="recentes-card-categoria">{{recentes.categoria}}</span>
-                                <p class="card-text mt-1 card-descricao">{{recentes.descricao}}</p>
-                                <p class="card-prices">{{recentes.preco | currency:'R$'}}</p>
-                                <a href="/home/livro/{{recentes._id}}" class="btn btn-block btn-outline-info">Ver Mais</a>
-                            </div>
-                        </div>
+                    <div class=" col-lg-3 col-md-6  col-12 col-sm-12" ng-repeat="recentes in bookRecent">
+                        <meu-card titulo="{{recentes.titulo}}" descricao="{{recentes.descricao}}" imagem="{{recentes.imagem}}" categoria="{{recentes.categoria}}" id="{{recentes._id}}" preco="{{recentes.preco}}"></meu-card>                   
                     </div>
                </div>
            </div>
@@ -151,16 +142,7 @@
               <div class="row">
                   <!-- cards -->
                   <div class=" col-lg-3 col-md-6  col-12 col-sm-12" ng-repeat="precos in bookPrices">
-                       <div class="card recentes-card">
-                           <img src="{{precos.imagem}}" class="card-img-top img-fluid" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title text-center">{{precos.titulo}}</h6>
-                                <span class="recentes-card-categoria">{{precos.categoria}}</span>
-                                <p class="card-text mt-1 card-descricao">{{precos.descricao}}</p>
-                                <p class="card-prices">{{precos.preco | currency:'R$'}}</p>
-                                <a href="/home/livro/{{precos._id}}" class="btn btn-block btn-outline-info">Ver Mais</a>
-                            </div>
-                       </div>
+                      <meu-card titulo="{{precos.titulo}}" descricao="{{precos.descricao}}" imagem="{{precos.imagem}}" categoria="{{precos.categoria}}" id="{{precos._id}}" preco="{{precos.preco}}"></meu-card>
                    </div>
               </div>
           </div>

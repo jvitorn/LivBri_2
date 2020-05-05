@@ -1,0 +1,14 @@
+<div class="card recentes-card" >
+    <div class="card-header  bg-transparent border-0">
+        <minha-foto url="{{imagem}}" alt="{{titulo}}"></minha-foto>
+    </div>
+    <div class="card-body">
+        <h6 class="card-title text-center">{{titulo}}</h6>
+        <span class="recentes-card-categoria">{{categoria}}</span>
+        <p class="card-text mt-1 card-descricao">{{descricao}}</p>
+    </div>
+    <div class="card-footer  bg-transparent p-0 border-0"> 
+        <p class="card-prices">{{preco | currency:'R$'}}</p>
+        <a href="/home/livro/{{id}}" class="btn btn-block btn-outline-info">Ver Mais</a>
+    </div>
+</div>

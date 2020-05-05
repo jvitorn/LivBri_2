@@ -41,18 +41,8 @@
                 <div class="row">
                     <!-- cards -->
                     <div class="col-lg-3 col-md-6  col-12 col-sm-12" ng-repeat="result in livro">
-                         <div class="card recentes-card">
-                             <img src="{{result.imagem}}" class="card-img-top img-fluid" alt="...">
-                             <div class="card-body">
-                                 <h6 class="card-title text-center">{{result.titulo}}</h6>
-                                 <span class="recentes-card-categoria">{{result.categoria}}</span>
-                                 <p class="card-text mt-1 card-descricao">{{result.descricao}}</p>
-                                 <p class="card-prices">{{result.preco | currency:"R$" }}</p>
-                                 <a href="/home/livro/{{result._id}}" class="btn btn-block btn-outline-info">Ver Mais</a>
-                             </div>
-                         </div>
+                      <meu-card titulo="{{result.titulo}}" descricao="{{result.descricao}}" imagem="{{result.imagem}}" categoria="{{result.categoria}}" id="{{result._id}}" preco="{{result.preco}}"></meu-card>                   
                      </div>
-                  
                 </div>
             </div>
     </section>

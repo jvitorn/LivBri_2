@@ -1,4 +1,4 @@
-angular.module('livbri').controller('PainelController',function($scope,$location,$http){
+angular.module('livbri').controller('PainelController',function($scope,$location,$http,$rootScope){
 
     //remover conteudo desnecessario
     function removerConteudo(){
@@ -48,7 +48,7 @@ angular.module('livbri').controller('PainelController',function($scope,$location
         $location.path('/adm/'+link);
     }
 
-    $http.get('http://localhost:3333/livros/count/count')
+    $http.get($rootScope.api+'livros/count/count')
     .then(results=>{
         $scope.countTotal = results.data;     
     })
@@ -56,7 +56,7 @@ angular.module('livbri').controller('PainelController',function($scope,$location
         console.log(error)
     })
 
-    $http.get('http://localhost:3333/livros/countinative/count')
+    $http.get($rootScope.api+'livros/countinative/count')
     .then(results=>{
         $scope.countDesativados = results.data;
     })

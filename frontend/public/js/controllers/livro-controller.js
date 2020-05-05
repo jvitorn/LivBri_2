@@ -1,4 +1,4 @@
-angular.module('livbri').controller('LivroController',function($scope,$routeParams,$http){
+angular.module('livbri').controller('LivroController',function($scope,$routeParams,$http,$rootScope){
     const container = document.getElementById('teste');
     const classeFluida = document.getElementsByClassName('container-fluid');
         if(classeFluida){
@@ -8,7 +8,7 @@ angular.module('livbri').controller('LivroController',function($scope,$routePara
 
     if($routeParams.id){
           //apos isso armazenamos um resultado
-          $http.get('http://localhost:3333/livros/'+$routeParams.id)
+          $http.get($rootScope.api+'livros/'+$routeParams.id)
           .then(results=>{
             $scope.livroUnico =results.data;
           })

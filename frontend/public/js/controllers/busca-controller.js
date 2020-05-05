@@ -1,4 +1,4 @@
-angular.module('livbri').controller('BuscaController',function($scope,$routeParams,$http){
+angular.module('livbri').controller('BuscaController',function($scope,$routeParams,$http,$rootScope){
     const container = document.getElementById('teste');
     const classeFluida = document.getElementsByClassName('container-fluid');
         if(classeFluida){
@@ -11,7 +11,7 @@ angular.module('livbri').controller('BuscaController',function($scope,$routePara
         //apos isso armazenamos um resultado
         $scope.resultado = $routeParams.q;
 
-        $http.get('http://localhost:3333/livros/busca/'+$scope.resultado)
+        $http.get($rootScope.api+'livros/busca/'+$scope.resultado)
         .then(results=>{
             $scope.livro = results.data;
         })

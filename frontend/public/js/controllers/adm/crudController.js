@@ -11,7 +11,7 @@ angular.module('livbri').controller('CrudController',function($scope,$http,$root
         window.location.href='/home/login';
     }
     //chamando livros
-    $http.get('http://localhost:3333/livros/total')
+    $http.get($rootScope.api+'livros/total')
     .then(results=>{
         $scope.listaLivros = results.data;
 
@@ -72,7 +72,7 @@ angular.module('livbri').controller('CrudController',function($scope,$http,$root
     $scope.enviarEdicao = (livro)=>{
         
         if(livro){
-            $http.post('http://localhost:3333/livros/atualizar',livro)
+            $http.post($rootScope.api+'livros/atualizar',livro)
             .then(results=>{
                 console.log(results)
                 const mensagem = results.data.msg;
@@ -93,7 +93,7 @@ angular.module('livbri').controller('CrudController',function($scope,$http,$root
      
         if(id){
             const teste = {_id:id}
-            $http.put('http://localhost:3333/livros/inativar',teste)
+            $http.put($rootScope.api+'livros/inativar',teste)
             .then(results=>{
                 const msg = results.data.msg;
                 const result = results.data.result;

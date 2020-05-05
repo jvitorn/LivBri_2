@@ -4,7 +4,7 @@
             <div class="col-md-6 livro-img">
                 <img src="{{livroUnico.imagem}}" class="img-fluid" alt="" srcset="">
             </div>
-            <div class="col-md-6 livro-info">
+            <div class="col-12 col-md-6 livro-info">
                 <div class="text-group">
                     <h3 class="display-5">{{livroUnico.titulo}}</h3>
                     <hr>
@@ -15,9 +15,9 @@
                     <h3 class="display-5">Descrição</h3>
                     <p>{{livroUnico.descricao}}</p>
                     <h2 class="display-4 mb-3">{{livroUnico.preco | currency:"R$"}}</h2>
-                    <a href="/home" class="btn btn-outline-success">Voltar</a>
-                    <button class="btn btn-outline-danger" ng-click="carrinho(livroUnico)">Comprar Agora</button>
-                    <a href="/home/carrinho" class=" btn btn-outline-primary">Carrinho</a>
+                    <a href="/home" class="btn btn-outline-success col-12 col-md-3">Voltar</a>
+                    <button class="btn btn-outline-danger col-12 col-md-4" ng-click="carrinho(livroUnico)">Comprar Agora</button>
+                    <a href="/home/carrinho" class=" btn btn-outline-primary col-12 col-md-4">Carrinho</a>
                 </div>  
             </div>
         </section>

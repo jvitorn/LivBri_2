@@ -7,7 +7,7 @@ angular.module('livbri').controller('LoginController',function($scope,$http,$roo
         //verificando se tem algo inserido
         if(login.id){
             //enviando login
-            $http.post('http://localhost:3333/session',login)
+            $http.post($rootScope.api+'session',login)
             .then(results=>{
                 localStorage.setItem('id',$scope.idLogin);
                 localStorage.setItem('nome',results.data.nome);
@@ -42,7 +42,7 @@ angular.module('livbri').controller('LoginController',function($scope,$http,$roo
        if(localizar){
            //verificando se existe algum email inserido
            if(localizar.email){
-                $http.post('http://localhost:3333/locateId',localizar)
+                $http.post($rootScope.api+'locateId',localizar)
                 .then(results=>{
                     const id = results.data._id;
                     const nome = results.data.nome;
@@ -52,6 +52,7 @@ angular.module('livbri').controller('LoginController',function($scope,$http,$roo
                         'Seu Id para logar é esse: <b>'+id+'</b>',
                         'success'
                     )
+                    $scope.senha=id;
                 })
                 .catch(error=>{
                     console.log(error)

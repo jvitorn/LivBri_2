@@ -1,10 +1,10 @@
-angular.module('livbri').controller('ModalAdicionarController',function($scope,$http){
+angular.module('livbri').controller('ModalAdicionarController',function($scope,$http,$rootScope){
 
     $scope.adicionarLivro = function(){
         //verifica se existe
         if($scope.novoLivro){    
             //caso tiver algum parametro é enviado para a api
-            $http.post('http://localhost:3333/livros',$scope.novoLivro)
+            $http.post($rootScope.api+'livros',$scope.novoLivro)
             //tratando resultados
             .then(results=>{
                 console.log(results.data.msg);

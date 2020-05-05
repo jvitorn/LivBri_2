@@ -31,11 +31,21 @@ angular.module('livbri').controller('CarrinhoController',function($scope){
 
     $scope.excluirCarrinho = (a)=>{
         const mapTitulos = livros.map(results=>{return results.titulo});
+        
+        //captura posição do array
         const VerPosição = mapTitulos.indexOf(a.titulo);
-
+        //remove 
         livros.splice(VerPosição,1)
         // transformando em um object
         localStorage.setItem('Livros', JSON.stringify(livros));
+
+        livros = JSON.parse(localStorage.getItem('Livros')) || [];
+        //mapeando todos os valores
+        const mapTotal = livros.map(results=>{
+            return results.valor
+        })
+        //pegando total
+        $scope.livrosTotal = mapTotal.reduce((total, numero) => total + numero, 0);    
 
     }
 });
