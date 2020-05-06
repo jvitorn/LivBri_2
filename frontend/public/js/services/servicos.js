@@ -6,6 +6,7 @@ angular.module('meusServicos',['ngResource'])
 			}
         });
 })
+
 .factory('cadastroDeLivro',function(recursoLivro,$q){
 
 	let servico = {};

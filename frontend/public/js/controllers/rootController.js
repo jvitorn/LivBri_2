@@ -16,6 +16,16 @@ angular.module('livbri').run(function($rootScope,$http){
           }
 
     }
+    $rootScope.isfluid = ()=>{
+        const container = document.getElementById('teste');
+        let valor ;
+        return container ?  valor = false : valor = true
+    }
+    $rootScope.notfluid = ()=>{
+        const container = document.getElementById('teste');
+        let valor ;
+        return container ?   valor = true : valor = false 
+    }
 
     const navbar = document.getElementById('nav');
     const footer = document.getElementById('footer');

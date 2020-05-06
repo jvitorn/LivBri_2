@@ -81,7 +81,8 @@
             </div>
         </div>
     </section>
-    <div id="teste" class="container">
+   
+    <div id="teste"  ng-class="{'container-fluid':isfluid(),'container':notfluid()}">
         <ng-view></ng-view>
     </div>
 </body>

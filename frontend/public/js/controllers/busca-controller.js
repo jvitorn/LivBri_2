@@ -1,11 +1,4 @@
 angular.module('livbri').controller('BuscaController',function($scope,$routeParams,$http,$rootScope){
-    const container = document.getElementById('teste');
-    const classeFluida = document.getElementsByClassName('container-fluid');
-        if(classeFluida){
-            container.classList.remove('container-fluid');
-            container.classList.add('container');
-        }
-    
     // verificando se tem algum parametro passado por get 'q'
     if($routeParams.q){
         //apos isso armazenamos um resultado
@@ -19,4 +12,7 @@ angular.module('livbri').controller('BuscaController',function($scope,$routePara
             console.log(error);
         })
     }
+
+    $rootScope.isfluid = ()=>{return false}
+    $rootScope.notfluid = ()=>{return true} 
 });

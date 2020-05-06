@@ -48,4 +48,7 @@ angular.module('livbri').controller('CarrinhoController',function($scope){
         $scope.livrosTotal = mapTotal.reduce((total, numero) => total + numero, 0);    
 
     }
+
+    $rootScope.isfluid = ()=>{return false}
+    $rootScope.notfluid = ()=>{return true} 
 });

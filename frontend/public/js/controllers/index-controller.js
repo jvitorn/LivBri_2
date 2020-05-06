@@ -1,10 +1,4 @@
 angular.module('livbri').controller('IndexController',function($scope,$location,$http,$rootScope){
-    const container = document.getElementById('teste');
-    const classeFluida = document.getElementsByClassName('container-fluid');
-        if(classeFluida){
-            container.classList.remove('container-fluid');
-            container.classList.add('container');
-        }
        //categoria icons
         $scope.Categoria = (categoria)=>{
                 $location.path('/home/busca/'+categoria);
@@ -52,5 +46,6 @@ angular.module('livbri').controller('IndexController',function($scope,$location,
 
         adicionarConteudo();
         
-       
+        $rootScope.isfluid = ()=>{return false}
+        $rootScope.notfluid = ()=>{return true}   
 });

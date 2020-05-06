@@ -11,8 +11,13 @@ angular.module('livbri').controller('CrudController',function($scope,$http,$root
         window.location.href='/home/login';
     }
     //chamando livros
-    recursoLivro.query((results)=>{
-        $scope.listaLivros = results;
+    $http.get($rootScope.api+'livros/total')
+    .then(results=>{
+        $scope.listaLivros = results.data;
+
+    })
+    .catch(error=>{
+        console.log(error)
     })
     //chamando categorias
     $scope.categoria = $rootScope.categorias;
@@ -48,10 +53,6 @@ angular.module('livbri').controller('CrudController',function($scope,$http,$root
     //chamando função
     removerConteudo();
 
-    
-
-    
-    
 
     //funções de capturar dados
     $scope.visualizar = function(livro){
@@ -91,8 +92,6 @@ angular.module('livbri').controller('CrudController',function($scope,$http,$root
             $http.put($rootScope.api+'livros/inativar',teste)
             .then(results=>{
                 const msg = results.data.msg;
-                const result = results.data.result;
-                const _id = results.data.id;
                 console.log(results);
                 Swal.fire(
                     'Sucesso',
