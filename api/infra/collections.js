@@ -55,6 +55,10 @@ class UsuarioCollection {
             email:{
                 type:String,
                 require:true
+            },
+            senha:{
+                type:String,
+                require:true
             }
         })
         //criando uma collection usando o schema definido

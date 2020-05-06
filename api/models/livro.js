@@ -90,16 +90,10 @@ class LivroDao{
         })
     }
     listarCategorias(res){
-        const Livro = mongoose.model('livros');
         const categorias = [{categoria:"Fantasia"},{categoria:"Ficção"},{categoria:"Romance"},{categoria:"Poesia"},{categoria:"Biografia"},{categoria:"Humor"},{categoria:"Contos"},{categoria:"Saúde"},{categoria:"Música"},{categoria:"Fotografia"},{categoria:"Artes"}];
         
         res.status(200).json(categorias);
-        /**
-        db.livros.find({categoria:{$exists:true}}).map(function(u){
-            var livroCategoria  = u.categoria;
-            return livroCategoria;
-        })
-         */  
+     
     }
     listarPorCategoria(categoria,res){
         const Livro = mongoose.model('livros');

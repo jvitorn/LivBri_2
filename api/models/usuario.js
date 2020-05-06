@@ -11,11 +11,13 @@ class UsuarioDao{
         //informações para cadastrar na collection
         const usuarioNome = usuario.nome;
         const usuarioEmail = usuario.email;
+        const usuarioSenha = usuario.senha;
         const Usuario = mongoose.model('usuarios');
         //save -> insert
         const inserir = new Usuario ({
             nome:usuarioNome,
-            email:usuarioEmail  
+            email:usuarioEmail,
+            senha:usuarioSenha
         }).save();
 
         inserir.then((results)=>{
