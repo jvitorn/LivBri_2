@@ -61,7 +61,7 @@
                                     <td>{{livro.titulo}}</td>
                                     <td>{{livro.autor}}</td>
                                     <td>{{livro.categoria}}</td>
-                                    <td><span class="badge badge-warning">{{livro.status}}</span></td>
+                                    <td><span class="badge" ng-class="{true: 'badge-success', false: 'badge-danger'}[livro.status]">{{livro.status}}</span></td>
                                     <td>
                                         <a href="#"  ng-click="visualizar(livro)"><i class="fas fa-eye text-primary"  data-toggle="modal" data-target="#infoModal"></i></a>
                                         &nbsp;&nbsp;
