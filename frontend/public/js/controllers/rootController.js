@@ -1,4 +1,4 @@
-angular.module('livbri').run(function($rootScope,$http){
+angular.module('livbri').run(function($rootScope,$http,$document){
     $rootScope.pesquisar = '';
     $rootScope.api = 'http://192.168.0.104:3332/';
     $rootScope.categorias = [];
@@ -26,13 +26,9 @@ angular.module('livbri').run(function($rootScope,$http){
         let valor ;
         return container ?   valor = true : valor = false 
     }
-
-    const navbar = document.getElementById('nav');
-    const footer = document.getElementById('footer');
-    const estilo    = document.getElementById('css');
-    $rootScope.footerConteudo = footer.childNodes[0].parentNode;
-    $rootScope.navConteudo = navbar.childNodes[0].parentNode;
-    $rootScope.cssConteudo = estilo;
-    
-
+    //removendo conteudo
+    $rootScope.navbarExists = true;
+    $rootScope.footerExists = true;
+    //adicionando cor escura
+    $rootScope.isAdm = false;
 });

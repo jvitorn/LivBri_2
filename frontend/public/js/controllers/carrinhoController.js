@@ -1,4 +1,4 @@
-angular.module('livbri').controller('CarrinhoController',function($scope){
+angular.module('livbri').controller('CarrinhoController',function($scope,$rootScope){
  
     let livros = []
     livros = JSON.parse(localStorage.getItem('Livros')) || [];
