@@ -95,27 +95,6 @@ class LivroDao{
         res.status(200).json(categorias);
      
     }
-    listarPorCategoria(categoria,res){
-        const Livro = mongoose.model('livros');
-        Livro.find( {"categoria":categoria,"status":true }).sort({categoria:1})
-        .then((results)=>{
-            res.status(202).json(results);
-        })
-        .catch((error)=>{
-            res.status(400).json(error);
-        })
-    }
-    listarLivro(id,res){
-        const Livro = mongoose.model('livros');
-        //mostrando todos os livros
-        Livro.findOne({_id:id, status: true})
-        .then((results)=>{
-            res.status(202).json(results);
-        })
-        .catch((error)=>{
-            res.status(400).json(error);
-        })
-    }
     buscarLivro(livro,res){
         const Livro = mongoose.model('livros');
         const pesquisa = livro; 
@@ -123,29 +102,6 @@ class LivroDao{
         Livro.find({titulo : {$regex:pesquisa},status:true})
         .then((results)=>{
             res.status(202).json(results);
-        })
-        .catch((error)=>{
-            res.status(400).json(error);
-        })
-    }
-    inativar(id,res){
-        const Livro = mongoose.model('livros');
-        const update = { status: false }
-        
-        Livro.updateOne({_id:id},update)
-        .then((results)=>{
-            res.status(201).json({msg:"Livro Inativado",result:results,id:id});
-        })
-        .catch((error)=>{
-            res.status(400).json(error);
-        })
-    }
-    ativar(id,res){
-        const Livro = mongoose.model('livros');
-        const update = { status : true }
-        Livro.updateOne({_id:id},update)
-        .then((results)=>{
-            res.status(201).json({msg:"Livro Ativado com sucesso",results});
         })
         .catch((error)=>{
             res.status(400).json(error);
@@ -164,6 +120,30 @@ class LivroDao{
             res.status(400).json(error);
         })
     }
-    
+    buscar(parametro,res){
+        if(parametro.length == 24){
+            const id = parametro;
+            const Livro = mongoose.model('livros');
+            //mostrando todos os livros
+            Livro.findOne({_id:id, status: true})
+            .then((results)=>{
+                res.status(202).json(results);
+            })
+            .catch((error)=>{
+                res.status(400).json(error);
+            })
+        }else{
+            const categoria = parametro;
+            const Livro = mongoose.model('livros');
+            //mostrando todas as categorias
+            Livro.find( {"categoria":categoria,"status":true }).sort({categoria:1})
+            .then((results)=>{
+                res.status(202).json(results);
+            })
+            .catch((error)=>{
+                res.status(400).json(error);
+            })
+        }
+    }
 }
 module.exports = new LivroDao;

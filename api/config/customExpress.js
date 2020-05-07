@@ -9,7 +9,7 @@ module.exports = ()=>{
     // criando um app em express
     const app = express();
     //use midwares
-     //testando para ver se para o erro do cors
+     //erro do cors
      app.use(function(req, res, next) {
         res.setHeader('Access-Control-Allow-Origin', '*');
         res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');

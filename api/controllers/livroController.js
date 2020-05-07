@@ -1,19 +1,15 @@
 const Livro = require("../models/livro");
-const path = require('path');   
+ 
 const routes = {
     list:'/livros',
+    category:'/livros/categorias',
+    search:'/livros/:parametro',
+    searchBook:'/livros/busca/:search',
     listRecent:'/livros/recent',
     listTotal:'/livros/total',
     prices:'/livros/precos',
-    searchBookId:'/livros/:id',
-    searchBook:'/livros/busca/:search',
-    listCategory:'/livros/categoria/:category',
-    active:'/livros/ativar',
-    update:'/livros/atualizar',
-    deactivate:'/livros/inativar',
     countTotal:'/livros/count/count',
-    countdeactivate:'/livros/countinative/count',
-    category:'/categoria'
+    countdeactivate:'/livros/countinative/count'
 }
 /*
     db.livros.find({categoria:{$exists:true}}).map(function(u){
@@ -24,6 +20,14 @@ const routes = {
     }
 */
 module.exports = (app)=>{
+    app.route(routes.category)
+        .get((req,res)=>{
+            Livro.listarCategorias(res);    
+        })
+    app.route(routes.prices)
+        .get((req,res)=>{
+           Livro.precosBaixos(res); 
+        })
     app.route(routes.list)
         .post((req,res)=>{
             const livro = req.body;
@@ -33,8 +37,13 @@ module.exports = (app)=>{
             Livro.listar(res);
         })
         .put((req,res)=>{
-            const { id } = req.body;
-            Livro.inativar(id,res);
+            const livro = req.body;
+            Livro.atualizar(livro,res);
+        })
+    app.route(routes.search)
+        .get((req,res)=>{
+            const parametro  = req.params.parametro;
+            Livro.buscar(parametro,res);
         })
     app.route(routes.listRecent)
         .get((req,res)=>{
@@ -44,44 +53,16 @@ module.exports = (app)=>{
         .get((req,res)=>{
             Livro.listarTodos(res);
         })
-    app.route(routes.prices)
-        .get((req,res)=>{
-           Livro.precosBaixos(res); 
-        })
-    app.route(routes.searchBookId)
-        .get((req,res)=>{
-            const id  = req.params.id;
-            Livro.listarLivro(id,res);
-        })
+    
     app.route(routes.searchBook)
         .get((req,res)=>{
             const titulo = req.params.search;
             Livro.buscarLivro(titulo,res);
         })
-    app.route(routes.listCategory)
-        .get((req,res)=>{
-            const categoria  = req.params.category;
-            Livro.listarPorCategoria(categoria,res);
-        })
+ 
     app.route(routes.category)
         .get((req,res)=>{
             Livro.listarCategorias(res);    
-        })
-    app.route(routes.active)
-        .put((req,res)=>{
-            const id  = req.body;
-            Livro.ativar(id,res);
-        })
-    app.route(routes.deactivate)
-        .put((req,res)=>{
-            const id  = req.body;
-            console.log(id)
-            Livro.inativar(id,res);
-        })
-    app.route(routes.update)
-        .post((req,res)=>{
-            const livro = req.body;
-            Livro.atualizar(livro,res);
         })
     app.route(routes.countTotal)
         .get((req,res)=>{ 
