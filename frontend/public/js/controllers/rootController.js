@@ -2,7 +2,7 @@ angular.module('livbri').run(function($rootScope,$http,$document){
     $rootScope.pesquisar = '';
     $rootScope.api = 'http://192.168.0.104:3332/';
     $rootScope.categorias = [];
-        $http.get($rootScope.api+"categoria")
+        $http.get($rootScope.api+"api/livros/categorias")
          .then(function(response) {
            $rootScope.categorias = response.data;
        }).catch(function(response) {
@@ -10,7 +10,6 @@ angular.module('livbri').run(function($rootScope,$http,$document){
        });
 
     $rootScope.submeter = function(){
-        console.log('disparado');
         if ($rootScope.pesquisar) {
             window.location.href = "localhost:3000/home/busca?q="+$rootScope.pesquisar;
           }

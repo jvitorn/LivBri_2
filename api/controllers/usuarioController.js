@@ -1,9 +1,9 @@
 const Usuario = require('../models/usuario');
 const routes = {
-    list:'/usuario',
-    listId:'/usuario/:id',
-    session:'/session',
-    locate:'/locateId'
+    list:'/api/usuario',
+    listId:'/api/usuario/:id',
+    session:'/api/session',
+    locate:'/api/locateId'
 }
 
 module.exports =  (app) => {

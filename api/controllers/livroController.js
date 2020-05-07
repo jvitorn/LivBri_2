@@ -1,24 +1,17 @@
 const Livro = require("../models/livro");
  
 const routes = {
-    list:'/livros',
-    category:'/livros/categorias',
-    search:'/livros/:parametro',
-    searchBook:'/livros/busca/:search',
-    listRecent:'/livros/recent',
-    listTotal:'/livros/total',
-    prices:'/livros/precos',
-    countTotal:'/livros/count/count',
-    countdeactivate:'/livros/countinative/count'
+    list:'/api/livros',
+    category:'/api/livros/categorias',
+    search:'/api/livros/:parametro',
+    searchBook:'/api/livros/busca/:search',
+    listRecent:'/api/livros/recent',
+    listTotal:'/api/livros/total',
+    prices:'/api/livros/precos',
+    countTotal:'/api/livros/count',
+    countdeactivate:'/api/livros/countinative'
 }
-/*
-    db.livros.find({categoria:{$exists:true}}).map(function(u){
-        var livroCategoria  = u.categoria;
-        
-        
-        livroCategoria.filter(categorias);
-    }
-*/
+
 module.exports = (app)=>{
     app.route(routes.category)
         .get((req,res)=>{
@@ -27,6 +20,18 @@ module.exports = (app)=>{
     app.route(routes.prices)
         .get((req,res)=>{
            Livro.precosBaixos(res); 
+        })
+    app.route(routes.listRecent)
+        .get((req,res)=>{
+            Livro.listarRecent(res);
+        })
+    app.route(routes.countTotal)
+        .get((req,res)=>{ 
+            Livro.contagemTotal(res);
+        })
+    app.route(routes.countdeactivate)
+        .get((req,res)=>{
+            Livro.contagemAtivos(res);
         })
     app.route(routes.list)
         .post((req,res)=>{
@@ -45,10 +50,6 @@ module.exports = (app)=>{
             const parametro  = req.params.parametro;
             Livro.buscar(parametro,res);
         })
-    app.route(routes.listRecent)
-        .get((req,res)=>{
-            Livro.listarRecent(res);
-        })
     app.route(routes.listTotal)
         .get((req,res)=>{
             Livro.listarTodos(res);
@@ -64,12 +65,6 @@ module.exports = (app)=>{
         .get((req,res)=>{
             Livro.listarCategorias(res);    
         })
-    app.route(routes.countTotal)
-        .get((req,res)=>{ 
-            Livro.contagemTotal(res);
-        })
-    app.route(routes.countdeactivate)
-        .get((req,res)=>{
-            Livro.contagemAtivos(res);
-        })
+   
+  
 }

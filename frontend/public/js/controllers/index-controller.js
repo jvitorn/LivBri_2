@@ -4,13 +4,13 @@ angular.module('livbri').controller('IndexController',function($scope,$location,
                 $location.path('/home/busca/'+categoria);
         }
         //api livros recentes
-        $http.get($rootScope.api+'livros/recent')
+        $http.get($rootScope.api+'api/livros/recent')
         .then(results=>{
                 $scope.bookRecent = results.data;
         })
         .catch(error=>console.error)
         //api livros preco
-        $http.get($rootScope.api+'livros/precos')
+        $http.get($rootScope.api+'api/livros/precos')
         .then(results=>{
             $scope.bookPrices = results.data;
         })

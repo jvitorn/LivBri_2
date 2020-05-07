@@ -1,11 +1,5 @@
 angular.module('livbri').controller('LivroController',function($scope,$routeParams,$http,$rootScope,recursoLivro){
-    const container = document.getElementById('teste');
-    const classeFluida = document.getElementsByClassName('container-fluid');
-        if(classeFluida){
-            container.classList.remove('container-fluid');
-            container.classList.add('container');
-        }
-
+    
     if($routeParams.id){
           //apos isso armazenamos um resultado
           recursoLivro.get({livroId:$routeParams.id},(results)=>{
