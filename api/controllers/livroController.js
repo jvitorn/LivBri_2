@@ -9,7 +9,6 @@ const routes = {
     listTotal:'/api/livros/total',
     prices:'/api/livros/precos',
     countTotal:'/api/livros/count',
-    countdeactivate:'/api/livros/countinative'
 }
 
 module.exports = (app)=>{
@@ -28,10 +27,6 @@ module.exports = (app)=>{
     app.route(routes.countTotal)
         .get((req,res)=>{ 
             Livro.contagemTotal(res);
-        })
-    app.route(routes.countdeactivate)
-        .get((req,res)=>{
-            Livro.contagemAtivos(res);
         })
     app.route(routes.list)
         .post((req,res)=>{

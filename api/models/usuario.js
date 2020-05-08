@@ -66,7 +66,6 @@ class UsuarioDao{
         catch(error){
             res.status(400).json({msg:"Erro ao atualizar usuario ao banco de dados",error});
         }
-        //Função de 
     }
     async deletarUsuario(id,res){
         //Collection de Usuarios
