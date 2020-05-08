@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const JWT = require('jsonwebtoken');
+//gerando token de acesso
+const signature = 'chavesecretatemporaria';
 
 //model
 
@@ -41,11 +44,23 @@ class UsuarioDao{
         //Collection de Usuarios
         const Usuario = mongoose.model('usuarios');
         //Função de procurar Id e enviar os dados daquele Usuario
-        const id  = usuario.id;
+        const email = usuario.email;
+        const password = usuario.senha;
        
         try{
-            const find = await Usuario.findOne( { _id:id } )
-            res.status(202).json(find);
+            const find = await Usuario.findOne({email:email,senha:password})
+
+            const payload = {userID:find._id}
+            const header = {algorithm:'HS256'}
+            
+            JWT.sign(payload,signature,header,(err,token)=>{
+                if(err){
+                    throw new Error('erro');
+                }
+                res.status(202).json({token:token});
+            })
+        
+            
         }
         catch(error){
             res.status(400).json({msg:"Erro ao logar usuario,favor tente novamente!",error});
