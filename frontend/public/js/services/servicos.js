@@ -2,7 +2,7 @@ angular.module('meusServicos',['ngResource'])
 .factory('recursoLivro',function($resource){
 		return $resource('http://localhost:3332/api/livros/:livroId',null,{
 			update : { 
-				method: 'post'
+				method: 'put'
 			}
         });
 })

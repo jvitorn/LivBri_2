@@ -4,7 +4,7 @@ angular.module('livbri').controller('BuscaController',function($scope,$routePara
         //apos isso armazenamos um resultado
         $scope.resultado = $routeParams.q;
 
-        $http.get($rootScope.api+'livros/busca/'+$scope.resultado)
+        $http.get($rootScope.api+'api/livros/busca/'+$scope.resultado)
         .then(results=>{
             $scope.livro = results.data;
         })

@@ -1,6 +1,7 @@
 angular.module('livbri').run(function($rootScope,$http,$document){
-    $rootScope.pesquisar = '';
+    
     $rootScope.api = 'http://localhost:3332/';
+    
     $rootScope.categorias = [];
         $http.get($rootScope.api+"api/livros/categorias")
          .then(function(response) {
@@ -9,12 +10,6 @@ angular.module('livbri').run(function($rootScope,$http,$document){
            console.log("ERROR:", response);
        });
 
-    $rootScope.submeter = function(){
-        if ($rootScope.pesquisar) {
-            window.location.href = "localhost:3000/home/busca?q="+$rootScope.pesquisar;
-          }
-
-    }
     $rootScope.isfluid = ()=>{
         const container = document.getElementById('teste');
         let valor ;

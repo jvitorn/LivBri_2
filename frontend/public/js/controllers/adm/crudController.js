@@ -1,4 +1,4 @@
-angular.module('livbri').controller('CrudController',function($scope,$http,$rootScope,$location,recursoLivro){
+angular.module('livbri').controller('CrudController',function($scope,$http,$rootScope,$location,$document,cadastroDeLivro){
      //verificação de login
      if(localStorage.getItem('authorization')){
       
@@ -23,6 +23,7 @@ angular.module('livbri').controller('CrudController',function($scope,$http,$root
         $scope.livroStatusSelecionado = livro.status;
         $scope.livroCategoriaSelecionado = livro.categoria;
         $scope.infoLivro = livro;
+        
 
         document.getElementById('mySelect').value = $scope.livroStatusSelecionado;
         document.getElementById('categoria').value = $scope.livroCategoriaSelecionado;
@@ -30,23 +31,25 @@ angular.module('livbri').controller('CrudController',function($scope,$http,$root
     }  
     //função dos changes 
     $scope.enviarEdicao = (livro)=>{
-        
-        if(livro){
-            $http.post($rootScope.api+'api/livros/',livro)
+        if ($scope.infoLivro) {
+            cadastroDeLivro.cadastrar(livro)
             .then(results=>{
-                console.log(results)
-                const mensagem = results.data.msg;
-                const id        = results.data.id;
-                Swal.fire(
-                    id,
-                    mensagem,
-                    'success'
-                  )
+                $scope.mensagem = results.mensagem;
+                const mensagem  = results.mensagem;
+                Swal.fire({
+                    title:'Livro',
+                    text: mensagem,
+                    icon: 'success',
+                })
+               
             })
             .catch(error=>{
-                console.log(error)
+                $scope.mensagem = error.mensagem;
+                 
             })
+           
         }
+        
     }
     //inativar
     $scope.inativarIcon = (id)=>{
@@ -66,5 +69,8 @@ angular.module('livbri').controller('CrudController',function($scope,$http,$root
             .catch(error=>console.error);
         }
         
+    }
+    $scope.limpar = ()=>{
+        $scope.infoLivro = ' ';
     }
 });

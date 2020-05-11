@@ -10,7 +10,9 @@ angular.module('livbri').controller('LoginController',function($scope,$http,$roo
            $http.post($rootScope.api+'api/session',login)
            .then(results=>{
                const token = results.data.token;
+
                localStorage.setItem('authorization',token)
+               
                if(localStorage.getItem('authorization')){
                 $location.path('adm/painel');
                }

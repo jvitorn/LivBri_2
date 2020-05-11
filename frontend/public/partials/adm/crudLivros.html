@@ -30,7 +30,7 @@
     <section class="row crud-btn-send">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="btn-group btn-group-lg"></div>
-                    <button class="btn btn-success" data-toggle="modal" data-target="#adicionaModal">Adicionar Livro</button>
+                    <button class="btn btn-success"  data-toggle="modal" data-target="#editarModal">Adicionar Livro</button>
                     <button class="btn btn-primary" data-toggle="modal" data-target="#inativarModal">Inativar Livro</button>
                     <a class="btn btn-danger" href="/adm/painel">Voltar p/ Painel</a>
                     <a class="btn btn-light" href="/home">Voltar p/ Site</a>
@@ -215,10 +215,10 @@
     <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="editarModalLabel" aria-hidden="true">
         <div class="modal-dialog  modal-xl" role="document">
             <div class="modal-content bg-dark">
-                <form novalidate ng-submit="enviarEdicao(infoLivro)">
+                <form  novalidate ng-submit="enviarEdicao(infoLivro)">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editarModal" >Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" ng-click="limpar()" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -254,6 +254,10 @@
                             <input type="text" class="form-control"  ng-model="infoLivro.preco"  placeholder="Preço Aqui" >
                         </div>
                         <div class="col-12">
+                            <h5>Img</h5>
+                            <input type="text" class="form-control"  ng-model="infoLivro.imagem"  placeholder="imagem Aqui" >
+                        </div>
+                        <div class="col-12">
                             <h5>Descrição</h5>
                             <textarea class="form-control" name="descrição"  ng-model="infoLivro.descricao" id="" cols="30" rows="10"></textarea>
                         </div>
@@ -261,7 +265,7 @@
                 </div>
                 <div class="modal-footer">
                     <input type="submit" class="btn btn-primary" placeholder="Enviar">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button ng-click="limpar()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
                 </form>
             </div>
