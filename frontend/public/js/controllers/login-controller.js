@@ -1,35 +1,23 @@
-angular.module('livbri').controller('LoginController',function($scope,$http,$rootScope){
+angular.module('livbri').controller('LoginController',function($scope,$http,$rootScope,$location){
     // adicionar container fluid
     $rootScope.isfluid = ()=>{return true}
     $rootScope.notfluid = ()=>{return false}
 
     $scope.idLogin = '';
-    $scope.login = ()=>{
-        const login = {id:$scope.idLogin};
+    $scope.submeter = (login)=>{
         //verificando se tem algo inserido
-        if(login.id){
-            //enviando login
-            $http.post($rootScope.api+'session',login)
-            .then(results=>{
-                localStorage.setItem('id',$scope.idLogin);
-                localStorage.setItem('nome',results.data.nome);
-
-                window.location.href='/adm/painel';
-            })
-            .catch(error=>{
-                $scope.msg = error.data.msg; 
-                console.log("login->Error:"+error)
-                console.log(error)
-                const erro = error.data;
-                //alert
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Erro',
-                    text: erro.msg,
-                })
-            })
+        if(login.email){
+           $http.post($rootScope.api+'api/session',login)
+           .then(results=>{
+               const token = results.data.token;
+               localStorage.setItem('authorization',token)
+               if(localStorage.getItem('authorization')){
+                $location.path('adm/painel');
+               }
+           })
+           .catch(error=>{console.error});
         }else{
-            $scope.msg = 'Favor Insira um ID'; 
+            $scope.msg = 'Favor Insira um email'; 
             //alert
             Swal.fire({
                 icon: 'warning',

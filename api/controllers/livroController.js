@@ -28,6 +28,10 @@ module.exports = (app)=>{
         .get((req,res)=>{ 
             Livro.contagemTotal(res);
         })
+    app.route(routes.listTotal)
+        .get((req,res)=>{
+            Livro.listarTodos(res);
+        })
     app.route(routes.list)
         .post((req,res)=>{
             const livro = req.body;
@@ -45,10 +49,7 @@ module.exports = (app)=>{
             const parametro  = req.params.parametro;
             Livro.buscar(parametro,res);
         })
-    app.route(routes.listTotal)
-        .get((req,res)=>{
-            Livro.listarTodos(res);
-        })
+    
     
     app.route(routes.searchBook)
         .get((req,res)=>{

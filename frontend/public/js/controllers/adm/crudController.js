@@ -1,17 +1,12 @@
-angular.module('livbri').controller('CrudController',function($scope,$http,$rootScope,recursoLivro){
-    //verificação de login
-    if(localStorage.getItem('id')){
-        const id = localStorage.getItem('id').length;
-        if(id <= 24){
-            $scope.adm = localStorage.getItem('nome');
-        }else{
-            window.location.href='/home/login';   
-        }
+angular.module('livbri').controller('CrudController',function($scope,$http,$rootScope,$location,recursoLivro){
+     //verificação de login
+     if(localStorage.getItem('authorization')){
+      
     }else{
-        window.location.href='/home/login';
+        $location.path('/home/login');
     }
     //chamando livros
-    $http.get($rootScope.api+'livros/total')
+    $http.get($rootScope.api+'api/livros/total')
     .then(results=>{
         $scope.listaLivros = results.data;
 
@@ -37,7 +32,7 @@ angular.module('livbri').controller('CrudController',function($scope,$http,$root
     $scope.enviarEdicao = (livro)=>{
         
         if(livro){
-            $http.post($rootScope.api+'livros/atualizar',livro)
+            $http.post($rootScope.api+'api/livros/',livro)
             .then(results=>{
                 console.log(results)
                 const mensagem = results.data.msg;
