@@ -55,5 +55,5 @@ angular.module('livbri').controller('LivroController',function($scope,$routePara
         
         }
      
-
+        
 });

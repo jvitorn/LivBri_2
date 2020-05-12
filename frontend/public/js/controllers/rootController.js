@@ -1,4 +1,4 @@
-angular.module('livbri').run(function($rootScope,$http,$document){
+angular.module('livbri').run(function($rootScope,$http,$document,$compile){
     
     $rootScope.api = 'http://localhost:3332/';
     
@@ -23,6 +23,18 @@ angular.module('livbri').run(function($rootScope,$http,$document){
     //removendo conteudo
     $rootScope.navbarExists = true;
     $rootScope.footerExists = true;
+
+    if(localStorage.getItem('authorization')){
+        $rootScope.loginExists = false;
+        $rootScope.loginNotExists = true;
+    }else{
+        $rootScope.loginExists = true;
+        $rootScope.loginNotExists = false;   
+    }
+
+       
+        
+    
     //adicionando cor escura
     $rootScope.isAdm = false;
 });

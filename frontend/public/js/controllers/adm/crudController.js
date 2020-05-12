@@ -52,21 +52,26 @@ angular.module('livbri').controller('CrudController',function($scope,$http,$root
         
     }
     //inativar
-    $scope.inativarIcon = (id)=>{
+    $scope.inativarIcon = (livro)=>{
      
-        if(id){
-            const teste = {_id:id}
-            $http.put($rootScope.api+'livros/inativar',teste)
+        if ($scope.infoLivro) {
+            $scope.infoLivro.status = false;
+            cadastroDeLivro.cadastrar(livro)
             .then(results=>{
-                const msg = results.data.msg;
-                console.log(results);
-                Swal.fire(
-                    'Sucesso',
-                    msg,
-                    'success'
-                  )
+                $scope.mensagem = results.mensagem;
+                const mensagem  = results.mensagem;
+                Swal.fire({
+                    title:'Livro',
+                    text: mensagem,
+                    icon: 'success',
+                })
+               
             })
-            .catch(error=>console.error);
+            .catch(error=>{
+                $scope.mensagem = error.mensagem;
+                 
+            })
+           
         }
         
     }

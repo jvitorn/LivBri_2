@@ -1,10 +1,11 @@
 angular.module('livbri', ['diretivas','ngRoute','meusServicos'])
-	.config(function($routeProvider, $locationProvider) {
+	.config(($routeProvider, $locationProvider)=>{
 		const routeIndex = {
 			home:"/home",
 			adm:'/adm'
 		}
 
+		
 		$locationProvider.html5Mode(true);
         //rotas de usuario
 		$routeProvider.when(routeIndex.home, {

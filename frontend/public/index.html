@@ -46,8 +46,11 @@
 </head>
 <body ng-class="{'noturno':isAdm}">
     <section ng-if='navbarExists' class="navbar navbar-expand-lg navbar-dark bg-info p-4">
-        <div id="nav" class="container" >
-            <a class="navbar-brand" href="#"><b>Livbri</b></a>
+        <div id="nav" class="container"  >
+            <div class="navbar-brand" id="brand"> 
+                <a ng-if='loginExists' class="text-white" href="/home">Livbri<a>
+                <a ng-if='loginNotExists' class="text-white" href="/adm/painel">Painel</a>
+            </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -79,8 +82,7 @@
             </div>
         </div>
     </section>
-   
-    <div ng-class="{'container-fluid':isfluid(),'container':notfluid()}">
+    <div ng-class="{'container-fluid':isfluid,'container':notfluid}">
         <ng-view></ng-view>
     </div>
 </body>

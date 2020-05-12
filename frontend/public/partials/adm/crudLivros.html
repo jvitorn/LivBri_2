@@ -31,7 +31,6 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="btn-group btn-group-lg"></div>
                     <button class="btn btn-success"  data-toggle="modal" data-target="#editarModal">Adicionar Livro</button>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#inativarModal">Inativar Livro</button>
                     <a class="btn btn-danger" href="/adm/painel">Voltar p/ Painel</a>
                     <a class="btn btn-light" href="/home">Voltar p/ Site</a>
                 </div>
@@ -132,34 +131,6 @@
                 </form>
             </div>
         </div>
-    </div>
-    <!-- Modal Inativar-->
-    <div class="modal fade" id="inativarModal" tabindex="-1" role="dialog" aria-labelledby="inativarModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document" >
-        <form ng-controller="ModalVisualizarController" ng-submit="inativarUsuario()">
-        <div class="modal-content bg-light text-dark">
-        <div class="modal-header">
-            <h5 class="modal-title" id="inativarModal">Modal Inativar Livro</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <div class="text-group mb-3">
-                <h5 class="text-center">Insira o ID do Livro</h5>
-                <h5>{{idInativarUsuario}}</h5>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="ID" ng-model="idInativarUsuario">
-            </div>
-        </div>
-        <div class="modal-footer">
-            <input type="submit" class="btn btn-primary">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-        </form>
-        </div>
-    </div>
     </div>
     <!-- Modal Info-->
     <div class="modal fade" id="infoModal" tabindex="-1" role="dialog"  aria-labelledby="infoModalLabel" aria-hidden="true">
@@ -274,7 +245,7 @@
     <!-- Modal Desativar-->
     <div class="modal fade" id="desativarModal" tabindex="-1" role="dialog" aria-labelledby="desativarModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <form novalidate ng-submit="inativarIcon(infoLivro._id)">
+            <form novalidate ng-submit="inativarIcon(infoLivro)">
             <div class="modal-content bg-light text-dark">
             <div class="modal-header">
                 <h5 class="modal-title" id="desativarModal">Desativar Livro</h5>

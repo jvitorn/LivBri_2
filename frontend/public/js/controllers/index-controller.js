@@ -1,4 +1,4 @@
-angular.module('livbri').controller('IndexController',function($scope,$location,$http,$rootScope,$document){
+angular.module('livbri').controller('IndexController',function($scope,$location,$http,$rootScope){
        //categoria icons
         $scope.Categoria = (categoria)=>{
                 $location.path('/home/busca/'+categoria);
@@ -8,20 +8,23 @@ angular.module('livbri').controller('IndexController',function($scope,$location,
         .then(results=>{
                 $scope.bookRecent = results.data;
         })
-        .catch(error=>console.error)
+        .catch(error=>{console.log(error)});
         //api livros preco
         $http.get($rootScope.api+'api/livros/precos')
         .then(results=>{
             $scope.bookPrices = results.data;
         })
-        .catch(error=>console.error)
-    
+        .catch(error=>{
+                console.log(error)
+        });
         //container
-        $rootScope.isfluid = ()=>{return false}
-        $rootScope.notfluid = ()=>{return true}  
+        $rootScope.isfluid = false;
+        $rootScope.notfluid = true;
         //navbar
         $rootScope.navbarExists = true;
         $rootScope.footerExists = true;
         //adicionando fundo escuro
         $rootScope.isAdm = false;
-});
+
+        
+})

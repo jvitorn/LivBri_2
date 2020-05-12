@@ -1,7 +1,7 @@
 angular.module('livbri').controller('LoginController',function($scope,$http,$rootScope,$location){
     // adicionar container fluid
-    $rootScope.isfluid = ()=>{return true}
-    $rootScope.notfluid = ()=>{return false}
+    $rootScope.isfluid = true
+    $rootScope.notfluid = false
 
     $scope.idLogin = '';
     $scope.submeter = (login)=>{
