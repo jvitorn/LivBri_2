@@ -24,13 +24,7 @@ angular.module('livbri').run(function($rootScope,$http,$document,$compile){
     $rootScope.navbarExists = true;
     $rootScope.footerExists = true;
 
-    if(localStorage.getItem('authorization')){
-        $rootScope.loginExists = false;
-        $rootScope.loginNotExists = true;
-    }else{
-        $rootScope.loginExists = true;
-        $rootScope.loginNotExists = false;   
-    }
+    
 
        
         

@@ -17,7 +17,10 @@ angular.module('livbri').controller('LoginController',function($scope,$http,$roo
                 $location.path('adm/painel');
                }
            })
-           .catch(error=>{console.error});
+           .catch(error=>{
+               console.warn(error)
+               $scope.msg = error.data.msg;
+            });
         }else{
             $scope.msg = 'Favor Insira um email'; 
             //alert

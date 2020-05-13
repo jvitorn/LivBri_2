@@ -25,5 +25,8 @@ angular.module('livbri').controller('PainelController',function($scope,$location
         console.log(error)
     })
 
-    
+    $scope.logout = ()=>{
+        localStorage.clear();
+        $location.path('/home/');
+    }
 });

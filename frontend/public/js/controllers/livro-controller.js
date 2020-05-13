@@ -8,7 +8,7 @@ angular.module('livbri').controller('LivroController',function($scope,$routePara
     }
 
     $scope.carrinho =(livro)=>{
-      
+      if(localStorage.getItem('authorization')){
         let livros = [];
        
         livros = JSON.parse(localStorage.getItem('Livros')) || [];
@@ -53,7 +53,21 @@ angular.module('livbri').controller('LivroController',function($scope,$routePara
         
 
         
+        }else{
+          //se localizar nao insere o valor 
+          Swal.fire(
+            'Não Logado',
+            'Você precisa estar logado para adicionar o livro',
+            'warning'
+          )
         }
+      }
      
-        
+        if(localStorage.getItem('authorization')){
+          $rootScope.loginExists = false;
+          $rootScope.loginNotExists = true;
+      }else{
+          $rootScope.loginExists = true;
+          $rootScope.loginNotExists = false;   
+      }    
 });

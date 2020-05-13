@@ -26,5 +26,11 @@ angular.module('livbri').controller('IndexController',function($scope,$location,
         //adicionando fundo escuro
         $rootScope.isAdm = false;
 
-        
+        if(localStorage.getItem('authorization')){
+                $rootScope.loginExists = false;
+                $rootScope.loginNotExists = true;
+            }else{
+                $rootScope.loginExists = true;
+                $rootScope.loginNotExists = false;   
+            }
 })

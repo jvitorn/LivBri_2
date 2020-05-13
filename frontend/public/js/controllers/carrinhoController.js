@@ -1,4 +1,4 @@
-angular.module('livbri').controller('CarrinhoController',function($scope,$rootScope){
+angular.module('livbri').controller('CarrinhoController',function($scope,$rootScope,$location){
  
     let livros = []
     livros = JSON.parse(localStorage.getItem('Livros')) || [];
@@ -51,4 +51,14 @@ angular.module('livbri').controller('CarrinhoController',function($scope,$rootSc
 
     $rootScope.isfluid = ()=>{return false}
     $rootScope.notfluid = ()=>{return true} 
+
+    if(localStorage.getItem('authorization')){
+        $rootScope.loginExists = false;
+        $rootScope.loginNotExists = true;
+
+    }else{
+        $rootScope.loginExists = true;
+        $rootScope.loginNotExists = false;  
+        $location.path('/home/login'); 
+    }
 });
