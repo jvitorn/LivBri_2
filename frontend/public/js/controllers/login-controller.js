@@ -1,4 +1,4 @@
-angular.module('livbri').controller('LoginController',function($scope,$http,$rootScope,$location){
+angular.module('livbri').controller('LoginController',function($scope,$http,$rootScope,$location,cadastroDeUsuario){
     // adicionar container fluid
     $rootScope.isfluid = true
     $rootScope.notfluid = false
@@ -45,7 +45,23 @@ angular.module('livbri').controller('LoginController',function($scope,$http,$roo
            //verificando se existe algum email inserido
            if(cadastrar.email){
               if(cadastrar.senha){
-                console.log(cadastrar)
+                cadastroDeUsuario.cadastrar(cadastrar)
+                .then(results=>{
+                    const mensagem = results.mensagem;
+                    Swal.fire({
+                        title:'Cadastro',
+                        text: mensagem,
+                        icon: 'success',
+                    })
+                })
+                .catch(error=>{
+                    const mensagem = error.mensagem;
+                    Swal.fire({
+                        title:'Cadastro',
+                        text: mensagem,
+                        icon: 'success',
+                    })
+                })
               }else{
                 //alert
                 Swal.fire({

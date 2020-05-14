@@ -62,13 +62,13 @@ angular.module('meusServicos',['ngResource'])
             if(usuario._id){
                 recursoUsuario.update({id:usuario._id},usuario,function(){
                     resolve({
-                        mensagem:'Livro: '+ usuario.titulo + ' atualizado com sucesso!',
+                        mensagem:'Usuario: '+ usuario.nome + ' atualizado com sucesso!',
                         inclusao:false
                     });
                 },function(error){
                     console.log(error);
                     reject({
-                        mensagem:'Não foi possivel alterar o Livro ' + usuario.titulo
+                        mensagem:'Não foi possivel alterar o Usuario ' + usuario.nome
                     });
                 });
             }
@@ -76,13 +76,13 @@ angular.module('meusServicos',['ngResource'])
             else {
                 recursoUsuario.save(usuario,function(){
                     resolve({
-                        mensagem:'Livro ' + usuario.titulo + ' Incluido com sucesso ',
+                        mensagem:'Usuario: ' + usuario.nome + ' Incluido com sucesso ',
                         inclusao:true
                     });
                 },function(error){
                     console.log(error);
                     reject({
-                        mensagem:'Não foi possivel cadastrar o livro ' + usuario.titulo
+                        mensagem:'Não foi possivel cadastrar o Usuario ' + usuario.nome
                     });
                 })
             }

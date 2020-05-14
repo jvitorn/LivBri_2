@@ -23,7 +23,7 @@ class UsuarioDao{
                 email:usuarioEmail,
                 senha:usuarioSenha
             }).save();
-
+            
             res.status(201).json({msg:"Cadastro de Novo Usuario efetuado",id:inserir._id});
         }
         catch(error){
@@ -53,7 +53,7 @@ class UsuarioDao{
             const payload = {userID:find._id}
             const header = {algorithm:'HS256'}
             
-            JWT.sign(payload,signature,header,(err,token)=>{
+            await JWT.sign(payload,signature,header,(err,token)=>{
                 if(err){
                     throw new Error('erro');
                 }
