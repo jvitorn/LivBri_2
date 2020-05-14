@@ -2,7 +2,14 @@ angular.module('livbri').controller('LoginController',function($scope,$http,$roo
     // adicionar container fluid
     $rootScope.isfluid = true
     $rootScope.notfluid = false
-
+    $scope.submitar = (cadastrar)=>{
+        if(cadastrar.nome && cadastrar.email && cadastrar.senha ){
+            return false
+        }else{
+            
+            return true
+        }
+    }
     $scope.idLogin = '';
     $scope.submeter = (login)=>{
         //verificando se tem algo inserido
@@ -32,40 +39,29 @@ angular.module('livbri').controller('LoginController',function($scope,$http,$roo
         }
     }
     //localizar id
-    $scope.localizarId = (localizar)=>{
+    $scope.cadastrarUsuario = (cadastrar)=>{
         //verificando se existe algum dado inserido
-       if(localizar){
+       if(cadastrar){
            //verificando se existe algum email inserido
-           if(localizar.email){
-                $http.post($rootScope.api+'locateId',localizar)
-                .then(results=>{
-                    const id = results.data._id;
-                    const nome = results.data.nome;
-                    //alert
-                    Swal.fire(
-                        'Olá '+nome,
-                        'Seu Id para logar é esse: <b>'+id+'</b>',
-                        'success'
-                    )
-                    $scope.senha=id;
-                })
-                .catch(error=>{
-                    console.log(error)
-                    //alert
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Os Seus dados estão Invalidos,Favor Procure A gestão do sistema!',
-                    })
-                })
+           if(cadastrar.email){
+              if(cadastrar.senha){
+                console.log(cadastrar)
+              }else{
+                //alert
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Nenhum Senha',
+                    text: 'Favor Insira a Senha!',
+                })   
+              }
             }
             else{
                 //alert
-            Swal.fire({
-                icon: 'warning',
-                title: 'Nenhum Email',
-                text: 'Favor Insira o Email!',
-            })    
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Nenhum Email',
+                    text: 'Favor Insira o Email!',
+                })    
             }
         }else{
             //alert
@@ -75,6 +71,7 @@ angular.module('livbri').controller('LoginController',function($scope,$http,$roo
                 text: 'Favor Insira algum dado!',
             })
         }
+    
     }
     $scope.validacaoId =()=>{
         const id = $scope.idLogin;

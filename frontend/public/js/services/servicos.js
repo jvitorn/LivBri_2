@@ -44,4 +44,50 @@ angular.module('meusServicos',['ngResource'])
         });
 	};
 	return servico;
-});
+})
+
+.factory('recursoUsuario',function($resource){
+        return $resource('http://localhost:3332/api/usuario/:usuarioId',null,{
+			update : { 
+				method: 'post'
+			}
+        });
+})
+.factory('cadastroDeUsuario',function(recursoUsuario,$q){
+    let servico = {};
+
+    servico.cadastrar = function(usuario){
+        return $q(function(resolve,reject){
+            //caso existir esse id ele ira atualizar as informações 
+            if(usuario._id){
+                recursoUsuario.update({id:usuario._id},usuario,function(){
+                    resolve({
+                        mensagem:'Livro: '+ usuario.titulo + ' atualizado com sucesso!',
+                        inclusao:false
+                    });
+                },function(error){
+                    console.log(error);
+                    reject({
+                        mensagem:'Não foi possivel alterar o Livro ' + usuario.titulo
+                    });
+                });
+            }
+            //se nao existir ele ira criar uma nova informação de livro no banco 
+            else {
+                recursoUsuario.save(usuario,function(){
+                    resolve({
+                        mensagem:'Livro ' + usuario.titulo + ' Incluido com sucesso ',
+                        inclusao:true
+                    });
+                },function(error){
+                    console.log(error);
+                    reject({
+                        mensagem:'Não foi possivel cadastrar o livro ' + usuario.titulo
+                    });
+                })
+            }
+        });
+	};
+	return servico;
+})
+

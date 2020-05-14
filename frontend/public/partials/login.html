@@ -20,7 +20,7 @@
                                         <button class="btn btn-block btn-success" >Acessar</button>
                                     </div> 
                                     <div class="form-group">
-                                        Esqueci <a href="#" data-toggle="modal" data-target="#procurarModal" class="text-success">meu ID</a>
+                                        Novo <a href="#" data-toggle="modal" data-target="#cadastrarModal" class="text-success">Usuario</a>
                                     </div>
                                 </form>
                             </div>
@@ -30,13 +30,13 @@
                 <div class="col-md-6 col-12 login-img border">
                 </div>   
     </section>
-    <!-- Modal procurar-->
-    <div class="modal fade" id="procurarModal" tabindex="-1" role="dialog" aria-labelledby="procurarModalLabel" aria-hidden="true">
+    <!-- Modal cadastrar-->
+    <div class="modal fade" id="cadastrarModal" tabindex="-1" role="dialog" aria-labelledby="cadastrarModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content bg-light text-dark">
-                <form novalidate name ="formLocalizarId" ng-submit="localizarId(localizar)">
+                <form novalidate  ng-submit="cadastrarUsuario(cadastrar)">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="procurarModal">Modal Localizar Id</h5>
+                    <h5 class="modal-title" id="procurarModal">Cadastrar</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -44,27 +44,23 @@
                 <div class="modal-body">
                     <div class="row">
                        <div class="col-md-12">
-                           <div class="form-group">
-                               
+                            <div class="form-group">
                                <span class="lead">Nome</span>
-                               <input type="text" class="form-control" ng-model="localizar.nome" placeholder="Insira seu nome de ADM">
-                           </div>
-                           <div class="form-group">
-                                <span class="text-danger" ng-show="formLocalizarId.localizarEmail.$invalid">Insira um Email Valido</span>
-                                <br> 
-                                <span>{{senha}}</span>
-                                <br>
-                                <span class="lead">Email</span>
-                                <input type="email" required id="localizarEmail" class="form-control" name="localizarEmail" ng-model="localizar.email" placeholder="Insira seu Email de ADM">
+                               <input type="text" class="form-control" ng-model="cadastrar.nome" placeholder="Insira seu nome">
                             </div>
                             <div class="form-group">
-                                <span class="alert alert-warning text-center">Somente Usuarios cadastrados tem acesso a um ID</span>
+                                <span class="lead">Email</span>
+                                <input type="email" class="form-control"  ng-model="cadastrar.email" placeholder="Insira seu Email"  required >
+                            </div>
+                            <div class="form-group">
+                                <span class="lead">Senha</span>
+                                <input type="password" class="form-control"  ng-model="cadastrar.senha" placeholder="Insira sua senha"  required >
                             </div>
                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-success" ng-disabled="formLocalizarId.localizarEmail.$invalid">Localizar</button>
+                    <button class="btn btn-success" ng-disabled="submitar(cadastrar)">Cadastrar</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
                 </form>
