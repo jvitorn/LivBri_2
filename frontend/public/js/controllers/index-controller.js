@@ -29,8 +29,8 @@ angular.module('livbri').controller('IndexController',function($scope,$location,
         if(localStorage.getItem('authorization')){
                 $rootScope.loginExists = false;
                 $rootScope.loginNotExists = true;
-            }else{
+        }else{
                 $rootScope.loginExists = true;
                 $rootScope.loginNotExists = false;   
-            }
+        }
 })

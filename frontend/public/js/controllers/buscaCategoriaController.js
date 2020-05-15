@@ -14,4 +14,12 @@ angular.module('livbri').controller('BuscaCategoriaController',function($scope,$
     }
     $rootScope.isfluid = ()=>{return false}
     $rootScope.notfluid = ()=>{return true} 
+
+    if(localStorage.getItem('authorization')){
+        $rootScope.loginExists = false;
+        $rootScope.loginNotExists = true;
+    }else{
+        $rootScope.loginExists = true;
+        $rootScope.loginNotExists = false;   
+    }
 });
