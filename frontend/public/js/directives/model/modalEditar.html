@@ -1,0 +1,60 @@
+ <!-- Modal Editar-->
+ <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="editarModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-xl" role="document">
+        <div class="modal-content bg-dark">
+            <form  novalidate ng-submit="enviarEdicao(infoLivro)">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editarModal" >Modal title</h5>
+                <button type="button" ng-click="limpar()" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <h5>ID</h5>
+                        <input type="text" class="form-control" placeholder="Titulo aqui"  disabled value="{{infoLivro._id}}">
+                    </div>
+                    <div class="col-6">
+                        <h5>Titulo</h5>
+                        <input type="text" class="form-control" placeholder="Titulo aqui" ng-model="infoLivro.titulo">
+                    </div>
+                    <div class="col-6">
+                        <h5>Autor</h5>
+                        <input type="text" class="form-control" placeholder="Autor Aqui"  ng-model="infoLivro.autor">
+                    </div>
+                    <div class="col-6">
+                        <h5>Categoria</h5>
+                        <select id="categoria" class="form-control"  ng-model="infoLivro.categoria">
+                            <option ng-repeat="categorias in categoria"  value="{{categorias.categoria}}">{{categorias.categoria}}</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <h5>Status</h5>
+                        <select id="mySelect" class="form-control"  ng-model="infoLivro.status">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <h5>Preço</h5>
+                        <input type="text" class="form-control"  ng-model="infoLivro.preco"  placeholder="Preço Aqui" >
+                    </div>
+                    <div class="col-12">
+                        <h5>Img</h5>
+                        <input type="text" class="form-control"  ng-model="infoLivro.imagem"  placeholder="imagem Aqui" >
+                    </div>
+                    <div class="col-12">
+                        <h5>Descrição</h5>
+                        <textarea class="form-control" name="descrição"  ng-model="infoLivro.descricao" id="" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" placeholder="Enviar">
+                <button ng-click="limpar()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

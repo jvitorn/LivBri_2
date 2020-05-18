@@ -1,0 +1,50 @@
+ <!-- Modal Info-->
+ <div class="modal fade" id="infoModal" tabindex="-1" role="dialog"  aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content bg-dark">
+        <div class="modal-header">
+            <h5 class="modal-title" id="infoModal">Modal De Informações<h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-6">
+                    <h5>ID</h5>
+                    <p class="lead">{{infoLivro._id}}</p>
+                </div>
+                <div class="col-6">
+                    <h5>Titulo</h5>
+                    <p class="lead">{{infoLivro.titulo}}</p>
+                </div>
+                <div class="col-6">
+                    <h5>Autor</h5>
+                    <p class="lead">{{infoLivro.autor}}</p>
+                </div>
+                <div class="col-6">
+                    <h5>Categoria</h5>
+                    <p class="lead">{{infoLivro.categoria}}</p>
+                </div>
+                <div class="col-6">
+                    <h5>Status</h5>
+                    <p class="lead text-info">{{infoLivro.status}}</p>
+                </div>
+                <div class="col-6">
+                    <h5>Preço</h5>
+                    <p class="lead text-danger">{{infoLivro.preco| currency:"R$"}}</p>
+                </div>
+                <div class="col-12">
+                    <h5>Descrição</h5>
+                    <p class="lead ">
+                        {{infoLivro.descricao}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+</div>

@@ -34,3 +34,68 @@ angular.module('diretivas',[])
 
             return ddo;
         })
+        .directive('adicionarLivro',function(){
+            let ddo = {};
+
+            ddo.restrict = "AE",
+
+            ddo.template = '<button class="btn btn-success"  data-toggle="modal" data-target="#editarModal">Adicionar Livro</button>'
+            
+            return ddo;
+        })
+        .directive('voltarPara',function(){
+
+            let ddo = {};
+
+            ddo.restrict = 'AE',
+
+            ddo.scope = {
+                titulo:'@',
+                link:'@',
+                botao:'@'
+            };
+
+            ddo.template='<a class="{{botao}}" href="{{link}}">{{titulo}}</a>';
+
+            return ddo;
+        })
+        .directive('modalDesativar',function(){
+
+            let ddo = {};
+
+            ddo.restrict = 'AE',
+
+            ddo.templateUrl ='js/directives/model/modalDesativar.html';
+
+            return ddo;
+        })
+        .directive('modalEditar',function(){
+
+            let ddo = {};
+
+            ddo.restrict = 'AE',
+
+            ddo.templateUrl='js/directives/model/modalEditar.html';
+
+            return ddo;
+        })
+        .directive('modalInfo',function(){
+
+            let ddo = {};
+
+            ddo.restrict = 'AE',
+
+            ddo.templateUrl = 'js/directives/model/modalInfo.html';
+
+            return ddo;
+        })
+        .directive('modalAdicionar',function(){
+
+            let ddo = {};
+
+            ddo.restrict = 'AE',
+
+            ddo.templateUrl = 'js/directives/model/modalAdicionar.html';
+
+            return ddo;
+        })

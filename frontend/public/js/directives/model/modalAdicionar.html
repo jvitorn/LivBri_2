@@ -1,0 +1,55 @@
+<!-- Modal Adicionar-->
+<div class="modal fade" id="adicionaModal" tabindex="-1" role="dialog" aria-labelledby="adicionaModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content bg-light text-dark" ng-controller="ModalAdicionarController">
+            <form novalidate name ="formAdicionarLivro" ng-submit="adicionarLivro()">
+            <div class="modal-header">
+                <h5 class="modal-title" id="adicionaModal">Modal Adicionar Livros</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <span ng-show="formAdicionarLivro.titulo.$touched && formAdicionarLivro.titulo.$invalid" class="text-danger col-10 mb-5 mt-3">Titulo Não pode estar Vazio</span>
+                        <h5>Titulo</h5>
+                        <input type="text" ng-model="novoLivro.titulo" name="titulo" class="form-control" required placeholder="Titulo aqui">
+                    </div>
+                    <div class="col-6">
+                        <span ng-show="formAdicionarLivro.autor.$touched && formAdicionarLivro.autor.$invalid" class="text-danger col-10 mb-5 mt-3">Autor Não pode estar Vazio</span>
+                        <h5>Autor</h5>
+                        <input type="text" ng-model="novoLivro.autor" name="autor" class="form-control" required placeholder="Autor Aqui">
+                    </div>
+                    <div class="col-6">
+                        <span ng-show="formAdicionarLivro.categoria.$touched && formAdicionarLivro.categoria.$invalid" class="text-danger col-10 mb-5 mt-3">Favor selecione uma categoria</span>
+                        <h5>Categoria</h5>
+                        <select name="categoria" ng-model="novoLivro.categoria" class="form-control" required>
+                            <option ng-repeat="categorias in categoria" value="{{categorias.categoria}}">{{categorias.categoria}}</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <h5>Imagem</h5>
+                        <span ng-show="formAdicionarLivro.imagem.$touched && formAdicionarLivro.imagem.$invalid" class="text-danger col-10 mb-5 mt-3">Imagem Não pode estar Vazio</span>
+                        <input name="imagem" ng-model="novoLivro.imagem" type="text" class="form-control" required placeholder="URL Aqui">
+                    </div>
+                    <div class="col-6">
+                        <h5>Preço</h5>
+                        <span ng-show="formAdicionarLivro.preco.$touched && formAdicionarLivro.preco.$invalid" class="text-danger col-12 mb-5">Preço Não pode estar Vazio</span>
+                        <input name="preco" ng-model="novoLivro.preco" type="text" class="form-control" required placeholder="Preço Aqui">
+                    </div>
+                    <div class="col-12">
+                        <h5>Descrição</h5>
+                        <span ng-show="formAdicionarLivro.descricao.$touched && formAdicionarLivro.descricao.$invalid" class="text-danger col-12 mb-5">Favor Insira uma descrição</span>
+                        <textarea name="descricao" ng-model="novoLivro.descricao" class="form-control" cols="30" rows="10" required></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-success" ng-disabled="{{optionValidations}}" id="submit">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
