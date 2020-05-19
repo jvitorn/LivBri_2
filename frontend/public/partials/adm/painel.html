@@ -32,14 +32,14 @@
                 <section class="row menu">
                     <div class="col-md-12 mb-5">
                         <div class="row">
-                           <div class="col-md-6 icon-menu-itens">
+                           <div class="col-md-6 icon-menu-itens" ng-if='authAdicionar'>
                             <a href="/adm/crud">
                                 <i class="fas fa-plus"></i>
                                 <br>
                                 Adicionar Livro
                             </a>
                             </div>
-                            <div class="col-md-6 icon-menu-itens">
+                            <div class="col-md-6 icon-menu-itens" >
                                 <a ng-click="logout()">
                                     <i class="fas fa-ban"></i>
                                     <br>Sair
@@ -47,13 +47,13 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 icon-menu-itens">
+                            <div class="col-md-6 icon-menu-itens" ng-if='authAdicionar'>
                                 <a href="/adm/crud">
                                     <i class="fas fa-book-medical"></i><br>
                                     Reativar Livro
                                 </a>
                             </div>
-                            <div class="col-md-6 icon-menu-itens">
+                            <div class="col-md-6 icon-menu-itens" ng-if='authAdicionar'>
                                 <a href="index.html">
                                     <i class="fas fa-door-open"></i><br>
                                     Voltar P/ Home

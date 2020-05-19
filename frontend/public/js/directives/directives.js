@@ -38,8 +38,12 @@ angular.module('diretivas',[])
             let ddo = {};
 
             ddo.restrict = "AE",
+            
+            ddo.scope = {
+                habilita:'@'
+            };
 
-            ddo.template = '<button class="btn btn-success"  data-toggle="modal" data-target="#editarModal">Adicionar Livro</button>'
+            ddo.template = '<button class="btn btn-success"  data-toggle="modal" data-target="#editarModal" ng-if=habilita>Adicionar Livro</button>'
             
             return ddo;
         })
@@ -94,6 +98,7 @@ angular.module('diretivas',[])
             let ddo = {};
 
             ddo.restrict = 'AE',
+
 
             ddo.templateUrl = 'js/directives/model/modalAdicionar.html';
 

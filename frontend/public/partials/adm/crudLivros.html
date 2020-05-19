@@ -30,7 +30,7 @@
     <section class="row crud-btn-send">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="btn-group btn-group-lg"></div>
-                    <adicionar-livro></adicionar-livro>
+                    <adicionar-livro habilita={{authAdicionar}} ng-if='authAdicionar'></adicionar-livro>
                     <voltar-para botao='btn btn-danger' titulo='Voltar p/ Painel' link="/adm/painel"></voltar-para>
                     <voltar-para botao='btn btn-light'  titulo='Voltar p/ Site' link="/home"></voltar-para>
                 </div>

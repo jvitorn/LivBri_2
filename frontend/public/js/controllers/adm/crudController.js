@@ -11,9 +11,30 @@ angular.module('livbri').controller('CrudController',function($scope,$http,$root
     })
     .then(results=>{
         $scope.listaLivros = results.data;
+        $scope.authAdicionar = true;
     })
     .catch(error=>{
         console.log(error)
+        if(error.data.auth == false){
+            $scope.authAdicionar = error.data.auth;
+            console.log($scope.authAdicionar)
+            console.log('entrou no if do catch')
+            Swal.fire({
+                title:'Falha',
+                text: 'Favor Se logue Novamente',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Logar'
+              }).then((result) => {
+                if (result.value) {
+                    window.location.href = '/home/login';
+                }
+              })
+        }else{
+
+        }
     })
     //chamando categorias
     $scope.categoria = $rootScope.categorias;
