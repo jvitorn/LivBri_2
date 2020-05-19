@@ -1,5 +1,7 @@
 const Livro = require("../models/livro");
- 
+const JWT = require('jsonwebtoken'); 
+const signature = 'chavesecretatemporaria';
+
 const routes = {
     list:'/api/livros',
     category:'/api/livros/categorias',
@@ -10,7 +12,18 @@ const routes = {
     prices:'/api/livros/precos',
     countTotal:'/api/livros/count',
 }
-
+function verifyJWT(req, res, next){
+    var token = req.headers['x-access-token'];
+    if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
+    
+    JWT.verify(token,  signature, function(err, decoded) {
+      if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
+      
+      // se tudo estiver ok, salva no request para uso posterior
+      req.userId = decoded.id;
+      next();
+    });
+  }
 module.exports = (app)=>{
     app.route(routes.category)
         .get((req,res)=>{
@@ -25,22 +38,22 @@ module.exports = (app)=>{
             Livro.listarRecent(res);
         })
     app.route(routes.countTotal)
-        .get((req,res)=>{ 
+        .get(verifyJWT,(req,res)=>{ 
             Livro.contagemTotal(res);
         })
     app.route(routes.listTotal)
-        .get((req,res)=>{
+        .get(verifyJWT,(req,res)=>{
             Livro.listarTodos(res);
         })
     app.route(routes.list)
-        .post((req,res)=>{
+        .post(verifyJWT,(req,res)=>{
             const livro = req.body;
             Livro.criar(livro,res);
         })
         .get((req,res)=>{
             Livro.listar(res);
         })
-        .put((req,res)=>{
+        .put(verifyJWT,(req,res)=>{
             const livro = req.body;
             Livro.atualizar(livro,res);
         })

@@ -23,7 +23,7 @@ class UsuarioDao{
                 email:usuarioEmail,
                 senha:usuarioSenha
             }).save();
-            
+         
             res.status(201).json({msg:"Cadastro de Novo Usuario efetuado",id:inserir._id});
         }
         catch(error){
@@ -51,13 +51,16 @@ class UsuarioDao{
             const find = await Usuario.findOne({email:email,senha:password})
 
             const payload = {userID:find._id}
-            const header = {algorithm:'HS256'}
+            const header = {
+                expiresIn: 300 // expires in 5min
+            }
             
             await JWT.sign(payload,signature,header,(err,token)=>{
                 if(err){
                     throw new Error('erro');
                 }
-                res.status(202).json({token:token});
+                res.setHeader('x-access-token',token);
+                res.status(202).json({auth:true,token:token});
             })
         
             

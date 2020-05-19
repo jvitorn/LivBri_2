@@ -1,15 +1,16 @@
 angular.module('livbri').controller('CrudController',function($scope,$http,$rootScope,$location,$document,cadastroDeLivro){
      //verificação de login
      if(localStorage.getItem('authorization')){
-      
+        var toten = localStorage.getItem('authorization');
     }else{
         $location.path('/home/login');
     }
     //chamando livros
-    $http.get($rootScope.api+'api/livros/total')
+    $http.get($rootScope.api+'api/livros/total',{
+        headers: {'x-access-token':toten}
+    })
     .then(results=>{
         $scope.listaLivros = results.data;
-
     })
     .catch(error=>{
         console.log(error)

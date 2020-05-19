@@ -2,7 +2,7 @@ angular.module('livbri').controller('PainelController',function($scope,$location
 
     //verificação de login
     if(localStorage.getItem('authorization')){
-      
+      var toten = localStorage.getItem('authorization');
     }else{
         $location.path('/home/login');
     }
@@ -15,7 +15,9 @@ angular.module('livbri').controller('PainelController',function($scope,$location
         $location.path('/adm/'+link);
     }
 
-    $http.get($rootScope.api+'api/livros/count')
+    $http.get($rootScope.api+'api/livros/count',{
+        headers: {'x-access-token':toten}
+    })
     .then(results=>{
         $scope.countTotal = results.data.count;
         $scope.countDesativados = results.data.countDesactive;
