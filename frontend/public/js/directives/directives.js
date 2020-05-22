@@ -43,7 +43,7 @@ angular.module('diretivas',[])
                 habilita:'@'
             };
 
-            ddo.template = '<button class="btn btn-success"  data-toggle="modal" data-target="#editarModal" ng-if=habilita>Adicionar Livro</button>'
+            ddo.template = '<button class="btn btn-success"  data-toggle="modal" data-target="#editarModal">Adicionar Livro</button>'
             
             return ddo;
         })

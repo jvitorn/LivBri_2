@@ -21,10 +21,12 @@ class UsuarioDao{
             const inserir = await new Usuario ({
                 nome:usuarioNome,
                 email:usuarioEmail,
-                senha:usuarioSenha
+                senha:usuarioSenha,
+                nivel:'user'
             }).save();
-         
-            res.status(201).json({msg:"Cadastro de Novo Usuario efetuado",id:inserir._id});
+
+            res.setHeader('Access-Control-User',inserir.nivel);
+            res.status(201).json({msg:"Cadastro de Novo Usuario efetuado",id:inserir._id,level:inserir.nivel});
         }
         catch(error){
             res.status(404).json({msg:"Erro ao cadastrar um novo usuario ao banco de dados",error})
@@ -52,15 +54,17 @@ class UsuarioDao{
 
             const payload = {userID:find._id}
             const header = {
-                expiresIn: 300 // expires in 5min
+                expiresIn: 300 // expires 
             }
-            
+            const authenticate = find.nivel=='user' ? false : true;
+
             await JWT.sign(payload,signature,header,(err,token)=>{
                 if(err){
                     throw new Error('erro');
                 }
+               
                 res.setHeader('x-access-token',token);
-                res.status(202).json({auth:true,token:token});
+                res.status(202).json({adm:authenticate,auth:true,token:token});
             })
         
             

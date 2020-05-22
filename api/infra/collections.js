@@ -61,9 +61,13 @@ class UsuarioCollection {
             senha:{
                 type:String,
                 require:true
+            },
+            nivel:{
+                type:String,
+                require:true
             }
         })
-        UsuarioSchema.index( { "email": 1 }, { unique: true } )
+        UsuarioSchema.index( { email: 1 }, { unique: true } )
         //criando uma collection usando o schema definido
         mongoose.model('usuarios',UsuarioSchema);
         
