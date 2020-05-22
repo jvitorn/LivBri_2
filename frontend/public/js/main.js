@@ -45,6 +45,10 @@ angular.module('livbri', ['diretivas','ngRoute','meusServicos'])
 			templateUrl:'partials/adm/crudLivros.html',
 			controller:'CrudController'
 		});
+		$routeProvider.when(routeIndex.adm+'/user',{
+			templateUrl:'partials/adm/usuario.html',
+			controller:'CrudController'
+		})
 
 		$routeProvider.otherwise({redirectTo: '/home'});
 

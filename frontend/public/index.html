@@ -49,7 +49,7 @@
         <div id="nav" class="container"  >
             <div class="navbar-brand" id="brand"> 
                 <a ng-if='loginExists' class="text-white" href="/home">Livbri<a>
-                <a ng-if='loginNotExists' class="text-white" href="/adm/painel"><img src="https://i.dlpng.com/static/png/1647142-profilepng-512512-profile-png-512_512_preview.png" alt="" class="logo-navbar"></a>
+                <a ng-if='loginNotExists' class="text-white" href="/adm/user"><img src="https://i.dlpng.com/static/png/1647142-profilepng-512512-profile-png-512_512_preview.png" alt="" class="logo-navbar"></a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -86,84 +86,5 @@
         <ng-view></ng-view>
     </div>
 </body>
-<footer ng-if='footerExists'> 
-    <div id="footer" class="bg-dark">
-        <div class="container-fluid ">
-            <div class="row mt-2">
-                <!-- Logotipos -->
-                <div class="col-md-8 offset-md-2">
-                    <!-- divisao -->
-                    <div class="divider"></div>
-                    <div class="row">
-                        <!-- Lista de Navegação -->
-                        <div class="col-md-12 listas mt-3">
-                            <div class="row">
-                                <!-- Links Uteis -->
-                                <div class="col-md-4">
-                                        <h5 class="h5 text-info">Meios de Pagamento</h5>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item"><i class="fab fa-cc-visa"></i> Visa</li>
-                                            <li class="list-group-item"><i class="fab fa-cc-mastercard"></i> MasterCard</li>
-                                            <li class="list-group-item"><i class="fab fa-cc-amex"></i> American Express</li>
-                                            <li class="list-group-item"><i class="fab fa-cc-amazon-pay"></i> Amazon Pay</li>
-                                        </ul>
-                                </div>
-                                <!-- Redes Sociais -->
-                                <div class="col-md-4">
-                                        <h5 class="h5 text-info">Redes Sociais</h5>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item"><i class="fab fa-facebook-square"></i> Facebook</li>
-                                            <li class="list-group-item"><i class="fab fa-twitter-square"></i> Twitter</li>
-                                            <li class="list-group-item"><i class="fab fa-instagram"></i> Instagram</li>
-                                            <li class="list-group-item"><i class="fas fa-share-alt"></i> Outros</li>
-                                        </ul>
-                                </div>
-                                <!-- Links Uteis -->
-                                <div class="col-md-4">
-                                        <h5 class="h5 text-info">Links Uteis</h5>
-                                        <ul class="list-group list-group-flush footer-color">
-                                            <li class="list-group-item"><i class="fas fa-book-reader"></i> Login</li>
-                                            <li class="list-group-item"><i class="fas fa-chart-bar"></i> Registrar novo Usuario</li>
-                                            <li class="list-group-item"><i class="fas fa-thumbs-up"></i> Curta o Repositorio</li>
-                                            <li class="list-group-item"><i class="fas fa-share-alt"></i> Outros</li>
-                                        </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="divider mt-2"></div>
-                    <div class="row">
-                    <!-- Copyright -->
-                        <div class="col-md-12 copyright">
-                            <div class="row">
-                                <div class="col-md-12  mt-1">
-                                    <div class="text-center text-white">
-                                        <small> Jvitorn - Todos Os Direitos Reservados,imagens do carrousel meramente ilustrativas e creditos a saraiva</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- divisao -->
-                    <div class="divider mt-2"></div>
-                    <div class="row">
-                        <div class="col-md-12 copyright-equipe mt-1 text-white">      
-                            <div class="row">
-                                <div class="col-md-12">
-                                        <div class="text-center copyright-font">
-                                            <small>@ Desenvolvido por Jvitorn</small>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- bootstrap script -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</footer>
+<meu-footer ng-if='footerExists'></meu-footer>
 </html>

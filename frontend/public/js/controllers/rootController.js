@@ -31,4 +31,8 @@ angular.module('livbri').run(function($rootScope,$http,$document,$compile){
     
     //adicionando cor escura
     $rootScope.isAdm = false;
+
+    //verificação de login
+    $rootScope.loginExists = true;
+    $rootScope.loginNotExists = false;
 });

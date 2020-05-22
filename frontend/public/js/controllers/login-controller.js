@@ -17,11 +17,13 @@ angular.module('livbri').controller('LoginController',function($scope,$http,$roo
            $http.post($rootScope.api+'api/session',login)
            .then(results=>{
                const token = results.data.token;
+               const authenticate = results.data.adm;
 
                localStorage.setItem('authorization',token)
-               
+               localStorage.setItem('auth',authenticate)
                if(localStorage.getItem('authorization')){
-                $location.path('adm/painel');
+                   const verify = localStorage.getItem('auth')
+                    verify == 'true' ? $location.path('adm/painel') : $location.path('home/') 
                }
            })
            .catch(error=>{
@@ -53,6 +55,7 @@ angular.module('livbri').controller('LoginController',function($scope,$http,$roo
                         text: mensagem,
                         icon: 'success',
                     })
+                  
                 })
                 .catch(error=>{
                     const mensagem = error.mensagem;

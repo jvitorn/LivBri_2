@@ -22,7 +22,6 @@ angular.module('livbri').controller('PainelController',function($scope,$location
         $scope.countTotal = results.data.count;
         $scope.countDesativados = results.data.countDesactive;
         $scope.authAdicionar = true;
-
     })
     .catch(error=>{
         if(error.data.auth == false){

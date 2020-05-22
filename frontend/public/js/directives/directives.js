@@ -104,3 +104,23 @@ angular.module('diretivas',[])
 
             return ddo;
         })
+        .directive('meuFooter',function(){
+
+            let ddo = {};
+
+            ddo.restrict = 'AE',
+
+            ddo.templateUrl = 'js/directives/model/footer.html';
+
+            return ddo;
+        })
+        .directive('headerNavbar',function(){
+
+            let ddo = {};
+
+            ddo.restrict = 'AE',
+
+            ddo.templateUrl = 'js/directives/modal/navbar.html';
+
+            return ddo;
+        })
