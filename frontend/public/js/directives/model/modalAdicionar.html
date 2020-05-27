@@ -36,7 +36,7 @@
                     <div class="col-6">
                         <h5>Preço</h5>
                         <span ng-show="formAdicionarLivro.preco.$touched && formAdicionarLivro.preco.$invalid" class="text-danger col-12 mb-5">Preço Não pode estar Vazio</span>
-                        <input name="preco" ng-model="novoLivro.preco" type="text" class="form-control" required placeholder="Preço Aqui">
+                        <input name="preco" ng-model="novoLivro.preco" type="text" ui-mask="99,99 " ui-mask-placeholder ui-mask-placeholder-char="_" class="form-control" required placeholder="99,00">
                     </div>
                     <div class="col-12">
                         <h5>Descrição</h5>

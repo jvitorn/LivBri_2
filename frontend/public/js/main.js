@@ -1,5 +1,6 @@
-angular.module('livbri', ['diretivas','ngRoute','meusServicos'])
+angular.module('livbri', ['diretivas','ngRoute','meusServicos','ui.mask'])
 	.config(($routeProvider, $locationProvider)=>{
+		//routes
 		const routeIndex = {
 			home:"/home",
 			adm:'/adm'
