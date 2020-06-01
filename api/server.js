@@ -1,5 +1,5 @@
 //require
-require('dotenv').config({ path: '.env' });
+
 
 const customExpress = require('./config/customExpress');
 const mongoose = require('mongoose');
